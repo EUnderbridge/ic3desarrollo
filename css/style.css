@@ -1,0 +1,453 @@
+/* ------------------ ESTILOS GENERALES ------------------*/
+body {
+    overflow-x: hidden !important;      /* no es necesario */
+    overflow-y: scroll;                 /* no es necesario */
+    font-family: "Montserrat",sans-serif;
+    font-size: .95em;
+    font-weight: 400;
+    line-height: 23px;
+    color: #8d8d8d;
+    background-color: #ffffff;
+}
+
+li{
+    list-style: none;
+}
+
+p {
+    font-family: "Courier New", sans-serif;
+    font-size: 1.5em;
+    font-weight: 400;
+    line-height: 2em;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 5em;
+    font-weight: 100;
+    line-height: 1.313em;
+    letter-spacing: 21px;
+    font-family: 'Lato',sans-serif;
+    color: black;
+    margin-top: 150px;
+    letter-spacing: 50px;
+}
+
+
+h2 {
+    text-transform: uppercase;
+    font-size: 1.4em;
+    font-weight: 400;
+    line-height: 1.53846em;
+    letter-spacing: 1px;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-size: 1.4em;
+    font-weight: 400;
+    line-height: 1.44444em;
+    letter-spacing: 1px;
+}
+
+h5 {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: 400;
+    line-height: 1.44444em;
+    letter-spacing: 1px;
+}
+
+ul {
+    padding-left: 0;
+}
+
+.padding-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.grey-section {
+    background-color: rgb(245,245,245);
+}
+
+.subtitle {
+    margin-bottom: 50px;
+    font-family: "Georgia",sans-serif;
+    font-size: 16px;
+    font-style: italic;
+    color: #333;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #eee;
+}
+
+
+
+/* ------------------ OVERLAY ------------------*/
+
+#preloader-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1001;
+  background-color: white;
+  transition: all 0.25s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#preloader-container .lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+#preloader-container .lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 32px 32px;
+}
+#preloader-container .lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #999;
+  margin: -3px 0 0 -3px;
+}
+#preloader-container .lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+#preloader-container .lds-roller div:nth-child(1):after {
+  top: 50px;
+  left: 50px;
+}
+#preloader-container .lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+#preloader-container .lds-roller div:nth-child(2):after {
+  top: 54px;
+  left: 45px;
+}
+#preloader-container .lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+#preloader-container .lds-roller div:nth-child(3):after {
+  top: 57px;
+  left: 39px;
+}
+#preloader-container .lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+#preloader-container .lds-roller div:nth-child(4):after {
+  top: 58px;
+  left: 32px;
+}
+#preloader-container .lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+#preloader-container .lds-roller div:nth-child(5):after {
+  top: 57px;
+  left: 25px;
+}
+#preloader-container .lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+#preloader-container .lds-roller div:nth-child(6):after {
+  top: 54px;
+  left: 19px;
+}
+#preloader-container .lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+#preloader-container .lds-roller div:nth-child(7):after {
+  top: 50px;
+  left: 14px;
+}
+#preloader-container .lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+#preloader-container .lds-roller div:nth-child(8):after {
+  top: 45px;
+  left: 10px;
+}
+
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+/* ------------------ BARRA NAVEGACIÓN ------------------*/
+
+nav {
+    height: 90px;
+    width: 100%;
+    background: #FAFAFA;
+    padding: 1px 0px;
+    border-bottom: 1px solid #D8D8D8;
+    border-top: 1px solid #D8D8D8;
+    z-index: 900;
+    transition: all .5s cubic-bezier(0.190, 0.585, 0.285, 0.865);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+nav ul {
+    float: right;
+    margin: 0;
+    height: 100%;
+}
+
+nav li {
+    display: inline-block;
+    height: 100%;
+}
+
+nav a {
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.5em;
+    padding: 10px 10px 0px 0px;
+    display: block;
+    line-height: 62px;
+    margin: 5px 8px;
+    text-align: center;
+}
+
+nav img {
+    width: 545px;
+    margin: 5px 10px;
+    opacity: .8;
+}
+
+/* ------------------ SECCIÓN PRINCIPAL ------------------*/
+
+a h3:hover {
+  font-weight: bold;
+
+}
+
+/* ------------------ SECCIÓN HERO ------------------*/
+
+#hero {
+    height: 100vh;
+    background: rgba(0,0,0,0) url("../img/backgrounds/background.png") no-repeat fixed center top / cover;
+
+}
+
+#hero header {
+  padding-top: 50px;
+}
+
+#hero h1 {
+  font-size: 3em;
+  letter-spacing: 22.5px;
+  margin-bottom: 55px;
+  margin-top: 125px;
+}
+
+#hero h3 {
+  color: #000000;
+
+};
+
+
+
+
+/* ------------------ INTRO NOSOTROS ------------------*/
+
+
+#intro-nosotros {
+    box-shadow: inset 0px 10px 20px rgba(0,0,0,.05);
+    height: auto;
+}
+
+
+#intro-nosotros p {
+    text-align: justify;
+    padding-right: 50px;
+    font-size: 1.8em;
+}
+
+#intro-nosotros h2 {
+    font-family: "Georgia",sans-serif;
+    font-size: 16px;
+
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 3px;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+
+
+
+/* ------------------ FUENTES ------------------*/
+
+#fuentes{
+    position: relative;
+}
+
+#fuentes header {
+  padding: 0;
+}
+
+#fuentes article{
+    text-align: justify;
+    position: relative;
+}
+
+#fuentes article p {
+    font-size: 1.8em;
+}
+
+#fuentes article p a {
+  text-decoration: none;
+  text-decoration-color: black;
+}
+
+
+
+
+/* ------------------ SECCIÓN FUENTES LOGO ------------------*/
+
+#fuentes-logo {
+    padding: 50px 0;
+    background: rgba(0,0,0,0) url("../img/backgrounds/bg-world.jpg") no-repeat fixed center top / cover;
+}
+
+#fuentes-logo .elemento {
+    padding: 8px;
+    text-align: center;
+    font-family: "Lato",sans-serif;
+    font-weight: 300;
+}
+
+#fuentes-logo .marco {
+    padding: 2px;
+    border: 1px solid white;
+    background-color: rgba(255,255,255,0.1);
+}
+
+#fuentes-logo .reveal {
+    opacity: 0;
+    transition: opacity .8s;
+}
+
+#fuentes-logo .reveal.visible {
+    opacity: 1;
+}
+
+
+/* ------------------ SECCIÓN TRABAJOS ------------------*/
+
+#creditos{
+    position: relative;
+}
+
+#creditos header {
+  padding: 0;
+}
+
+#creditos article{
+    text-align: justify;
+    position: relative;
+}
+
+#creditos article p {
+    font-size: 1.8em;
+}
+
+#creditos a {
+  text-decoration: none;
+  text-decoration-color: grey;
+  font-weight: bold;
+}
+
+#creditos .row:last-of-type{
+    margin-top: 50px;
+}
+
+
+
+
+/* ------------------ SECCIÓN CRÉDITOS LOGO------------------*/
+
+#creditos-logo {
+    padding: 50px 0;
+    background: rgba(0,0,0,0) url("../img/backgrounds/bg-books.jpg") no-repeat fixed center top / cover;
+}
+
+#creditos-logo .elemento {
+    padding: 20px;
+    text-align: center;
+    font-family: "Lato",sans-serif;
+    font-weight: 300;
+}
+
+#creditos-logo .marco {
+    padding: 5px;
+    border: 1px solid white;
+    background-color: rgba(255,255,255,0.1);
+}
+
+#creditos-logo .reveal {
+    opacity: 0;
+    transition: opacity .8s;
+}
+
+#creditos-logo .reveal.visible {
+    opacity: 1;
+}
+
+
+
+
+/* ------------------ SECCIÓN FOOTER ------------------*/
+
+footer * {
+    color: white;
+}
+
+footer {
+    text-align: center;
+    background: rgb(50,50,50) none repeat scroll 0 0;
+}
+
+footer h4 {
+    margin-bottom: 40px;
+}
+
+footer a {
+    color: white;
+}
+
+footer .instagram li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+}
+
+footer .sociales li {
+    float: left;
+}
+
+footer address li{
+    margin-bottom: 10px;
+}
