@@ -999,3 +999,54 @@ function msg(arg1, arg2, arg3 = 4){
 
     }, arg3 * 1000);
 };
+
+
+/* Info period */
+function addPeriodInfoToDom () {
+  const periodValues = serializeMapFormValues();
+
+  if (periodValues.category === "huntington") {
+    if (periodValues.geo === "spain") {
+      document.getElementById('period-info').innerHTML = '*Periodo de datos: 1999 - 2014';
+
+    } else if (periodValues.geo === "austria") {
+      document.getElementById('period-info').innerHTML = '*Periodo de datos: 2002 - 2013';
+
+    } else {
+      document.getElementById('period-info').innerHTML = '*Periodo de datos: 1999 - 2013';
+
+    }
+  } else if (periodValues.category === "neuron") {
+    if (periodValues.geo === "spain") {
+      document.getElementById('period-info').innerHTML = '*Periodo de datos: 1999 - 2014';
+
+    } else if (periodValues.geo === "austria") {
+      document.getElementById('period-info').innerHTML = '*Periodo de datos: 2002 - 2014';
+
+    } else if (periodValues.geo === "denmark") {
+      document.getElementById('period-info').innerHTML = '*Periodo de datos: 2000 - 2012';
+
+    } else {
+      document.getElementById('period-info').innerHTML = '*Periodo de datos: 1999 - 2013';
+
+    }
+
+  } else if (periodValues.category === "ataxy") {
+    if (periodValues.geo === "spain") {
+      document.getElementById('period-info').innerHTML = '*Periodo de datos: 1999 - 2014';
+
+    } else if (periodValues.geo === "austria") {
+      document.getElementById('period-info').innerHTML = '*Periodo de datos: 2002 - 2014';
+
+    } else if (periodValues.geo === "uk") {
+      document.getElementById('period-info').innerHTML = '*Periodo de datos: 2000 - 2013';
+
+    } else {
+      document.getElementById('period-info').innerHTML = '*Periodo de datos: 1999 - 2013';
+
+    }
+
+  } else {
+    document.getElementById('period-info').innerHTML = '*Periodo de datos: 1999 - 2013';
+  }
+}
