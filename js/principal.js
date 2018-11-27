@@ -1007,43 +1007,37 @@ function addPeriodInfoToDom () {
   const periodValues = serializeMapFormValues();
 
   if (periodValues.category === "huntington") {
-    if (periodValues.geo === "spain") {
-      document.getElementById('period-info').innerHTML = '*Periodo de datos: 1999 - 2014';
+    if (periodValues.geo === "country") {
+      document.getElementById('period-info').innerHTML = '*Periodo de datos:<br>&nbsp;&nbsp;&nbsp;Austria: 2002 - 2013<br>&nbsp;&nbsp;&nbsp;España: 1999 - 2014<br>&nbsp;&nbsp;&nbsp;Resto: 2001 - 2012';
 
-    } else if (periodValues.geo === "austria") {
-      document.getElementById('period-info').innerHTML = '*Periodo de datos: 2002 - 2013';
+    } else if (periodValues.geo === "province" || periodValues.geo === "district") {
+      document.getElementById('period-info').innerHTML = '*Periodo de datos: 1999 - 2013';
 
     } else {
-      document.getElementById('period-info').innerHTML = '*Periodo de datos: 1999 - 2013';
+      document.getElementById('period-info').innerHTML = '*Periodo de datos:';
 
     }
   } else if (periodValues.category === "neuron") {
-    if (periodValues.geo === "spain") {
-      document.getElementById('period-info').innerHTML = '*Periodo de datos: 1999 - 2014';
+    if (periodValues.geo === "country") {
+      document.getElementById('period-info').innerHTML = '*Periodo de datos: <br>&nbsp;&nbsp;&nbsp;Austria: 2002 - 2014<br>&nbsp;&nbsp;&nbsp;Dinamarca: 2000 - 2012<br>&nbsp;&nbsp;&nbsp;España: 1999 - 2014<br>&nbsp;&nbsp;&nbsp;Resto: 2000 - 2013';
 
-    } else if (periodValues.geo === "austria") {
-      document.getElementById('period-info').innerHTML = '*Periodo de datos: 2002 - 2014';
-
-    } else if (periodValues.geo === "denmark") {
-      document.getElementById('period-info').innerHTML = '*Periodo de datos: 2000 - 2012';
+    } else if (periodValues.geo === "province" || periodValues.geo === "district") {
+      document.getElementById('period-info').innerHTML = '*Periodo de datos: 1999 - 2013';
 
     } else {
-      document.getElementById('period-info').innerHTML = '*Periodo de datos: 1999 - 2013';
+      document.getElementById('period-info').innerHTML = '*Periodo de datos:';
 
     }
 
   } else if (periodValues.category === "ataxy") {
-    if (periodValues.geo === "spain") {
-      document.getElementById('period-info').innerHTML = '*Periodo de datos: 1999 - 2014';
+    if (periodValues.geo === "country") {
+      document.getElementById('period-info').innerHTML = '*Periodo de datos:<br>&nbsp;&nbsp;&nbsp;Austria: 2002 - 2014<br>&nbsp;&nbsp;&nbsp;España: 1999 - 2014<br>&nbsp;&nbsp;&nbsp;Reino Unido: 2000 - 2013<br>&nbsp;&nbsp;&nbsp;Resto: 2000 - 2012';
 
-    } else if (periodValues.geo === "austria") {
-      document.getElementById('period-info').innerHTML = '*Periodo de datos: 2002 - 2014';
-
-    } else if (periodValues.geo === "uk") {
-      document.getElementById('period-info').innerHTML = '*Periodo de datos: 2000 - 2013';
+    } else if (periodValues.geo === "province" || periodValues.geo === "district") {
+      document.getElementById('period-info').innerHTML = '*Periodo de datos: 1999 - 2013';
 
     } else {
-      document.getElementById('period-info').innerHTML = '*Periodo de datos: 1999 - 2013';
+      document.getElementById('period-info').innerHTML = '*Periodo de datos:';
 
     }
 

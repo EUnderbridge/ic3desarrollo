@@ -444,5 +444,7 @@ canvas {
 
 .period-info {
   color: red;
-  font-size: 12px;
+  font-size: 14px;
+  padding-top: 425px;
+  bottom: 2px;
 }
