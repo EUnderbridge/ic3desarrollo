@@ -1,4 +1,4 @@
-var LAYER_COUNTRIES = {
+var LAYER_PAISES = {
 "type": "FeatureCollection",
 "name": "paises",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
