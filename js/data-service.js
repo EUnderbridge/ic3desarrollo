@@ -51,14 +51,14 @@
       disease: disease,
       prefix: prefixByGeoUnit[geoUnit],
     });
-    return ["..", "docs", "carto", geoUnit, filename].join("/");
+    return ["..", "docss", "carto", geoUnit, filename].join("/");
   }
 
   function getTrendDataFileUrl(opts) {
     const disease = opts.disease;
     const country = opts.country;
     const filename = getNormalizedDiseaseFilename({ disease: disease });
-    return ["..", "docs", "trend", country, filename].join("/");
+    return ["..", "docss", "trend", country, filename].join("/");
   }
 
   function fetchXlsxFile(url, cb) {
