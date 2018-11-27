@@ -911,6 +911,7 @@ var currentLegend = L.control();                                                
 mapSubmitButton.addEventListener("click", function(ev) {
   ev.preventDefault();
   const validateMapFormSubmit = validateMapForm();
+  const addPeriodInfo = addPeriodInfoToDom();
   const mapForm = serializeMapFormValues();
   const dataSheetRowName = mapForm.rate + "_" + mapForm.sex;
   const dataSheetCallback = function(error, dataSheet) {
