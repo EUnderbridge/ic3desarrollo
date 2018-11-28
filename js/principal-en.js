@@ -113,7 +113,7 @@ selectDisease.addEventListener("change", function(ev) {
     var countryExists = ($('#geoMap option[value=country]').length > 0);
 
     if (!countryExists) {
-      $('#geoMap').append($('<option>', { value: "country", text: 'Pais'}));
+      $('#geoMap').append($('<option>', { value: "country", text: 'Country'}));
 
     }
 
@@ -145,7 +145,7 @@ selectGeoUnit.addEventListener("change", function(ev) {
     // add ta if not exists
     let taExists = ($('#rate option[value=ta]').length > 0);
     if (!taExists) {
-      $('#rate').append($('<option>', { value: "ta", text: 'Tasa ajustada por edad'}));
+      $('#rate').append($('<option>', { value: "ta", text: 'Rate adjusted for age'}));
 
     }
 
@@ -182,21 +182,21 @@ selectGeoUnit.addEventListener("change", function(ev) {
     // add pps if not exists
     let ppsExists = ($('#rate option[value=pps]').length > 0);
     if (!ppsExists) {
-      $('#rate').append($('<option>', { value: "pps", text: 'Probabilidad a Posteriori'}));
+      $('#rate').append($('<option>', { value: "pps", text: 'Probability to Posteriori'}));
 
     }
 
     // add rrs if not exists
     let rrsExists = ($('#rate option[value=rrs]').length > 0);
     if (!rrsExists) {
-      $('#rate').append($('<option>', { value: "rrs", text: 'Razón de Mortalidad Estandarizada Suavizada'}));
+      $('#rate').append($('<option>', { value: "rrs", text: 'Standardized Smoothed Mortality Ratio'}));
 
     }
 
     // add rme if not exists
     let rmeExists = ($('#rate option[value=rme]').length > 0);
     if (!rmeExists) {
-      $('#rate').append($('<option>', { value: "rme", text: 'Razón de Mortalidad Estandarizada'}));
+      $('#rate').append($('<option>', { value: "rme", text: 'Standardized Mortality Ratio'}));
 
     }
 
@@ -237,14 +237,14 @@ selectRate.addEventListener("change", function(ev) {
     // add women if not exists
     let womenExists = ($('#sex option[value=women]').length > 0);
     if (!womenExists) {
-      $('#sex').append($('<option>', { value: "women", text: 'Mujeres'}));
+      $('#sex').append($('<option>', { value: "women", text: 'Women'}));
 
     }
 
     // add men if not exists
     let menExists = ($('#sex option[value=men]').length > 0);
     if (!menExists) {
-      $('#sex').append($('<option>', { value: "men", text: 'Hombres'}));
+      $('#sex').append($('<option>', { value: "men", text: 'Men'}));
 
     }
 
@@ -260,57 +260,57 @@ selectTrendDisease.addEventListener("change", function(ev) {
 
   // Countries with huntington
   const huntingtonCountries = [ ["austria", "Austria"],
-                            ["belgium", "Bélgica"],
-                            ["croatia", "Croacia"],
-                            ["czechia", "República Checa"],
-                            ["denmark", "Dinamarca"],
-                            ["finland", "Finlandia"],
-                            ["france", "Francia"],
-                            ["germany", "Alemania"],
-                            ["hungary", "Hungría"],
-                            ["lithuania", "Lituania"],
-                            ["luxembourg", "Luxemburgo"],
-                            ["netherlands", "Países Bajos"],
-                            ["norway", "Noruega"],
-                            ["poland", "Polonia"],
-                            ["romania", "Rumanía"],
-                            ["sweden", "Suecia"],
-                            ["switzerland", "Suiza"],
-                            ["unitedkingdom", "Reino Unido"],
+                            ["belgium", "Belgium"],
+                            ["croatia", "Croatia"],
+                            ["czechia", "Czechia"],
+                            ["denmark", "Denmark"],
+                            ["finland", "Finland"],
+                            ["france", "France"],
+                            ["germany", "Germany"],
+                            ["hungary", "Hungary"],
+                            ["lithuania", "Lithuania"],
+                            ["luxembourg", "Luxembourg"],
+                            ["netherlands", "Netherlands Bajos"],
+                            ["norway", "Norway"],
+                            ["poland", "Poland"],
+                            ["romania", "Romania"],
+                            ["sweden", "Sweden"],
+                            ["switzerland", "Switzerland"],
+                            ["unitedkingdom", "United Kingdom"],
                             ["malta" , "Malta"],
                             ["bulgaria", "Bulgaria"],
-                            ["cyprus", "Chipre"],
+                            ["cyprus", "Cyprus"],
                             ["estonia", "Estonia"],
-                            ["iceland", "Islandia"],
-                            ["ireland", "Irlanda"],
-                            ["italy", "Italia"],
-                            ["latvia", "Letonia"],
-                            ["moldova", "Moldavia"],
+                            ["iceland", "Iceland"],
+                            ["ireland", "Ireland"],
+                            ["italy", "Italy"],
+                            ["latvia", "Latvia"],
+                            ["moldova", "Moldova"],
                             ["portugal", "Portugal"],
                             ["serbia", "Serbia"],
-                            ["slovakia", "Eslovaquia"],
-                            ["slovenia", "Eslovenia"]
+                            ["slovakia", "Slovakia"],
+                            ["slovenia", "Slovenia"]
                           ];
 
 
   const ataxyCountries = [ ["austria", "Austria"],
-                            ["belgium", "Bélgica"],
-                            ["croatia", "Croacia"],
-                            ["czechia", "República Checa"],
-                            ["denmark", "Dinamarca"],
-                            ["finland", "Finlandia"],
-                            ["france", "Francia"],
-                            ["germany", "Alemania"],
-                            ["hungary", "Hungría"],
-                            ["lithuania", "Lituania"],
-                            ["luxembourg", "Luxemburgo"],
-                            ["netherlands", "Países Bajos"],
-                            ["norway", "Noruega"],
-                            ["poland", "Polonia"],
-                            ["romania", "Rumanía"],
-                            ["sweden", "Suecia"],
-                            ["switzerland", "Suiza"],
-                            ["unitedkingdom", "Reino Unido"]
+                            ["belgium", "Belgium"],
+                            ["croatia", "Croatia"],
+                            ["czechia", "Czechia"],
+                            ["denmark", "Denmark"],
+                            ["finland", "Finland"],
+                            ["france", "France"],
+                            ["germany", "Germany"],
+                            ["hungary", "Hungary"],
+                            ["lithuania", "Lithuania"],
+                            ["luxembourg", "Luxembourg"],
+                            ["netherlands", "Netherlands Bajos"],
+                            ["norway", "Norway"],
+                            ["poland", "Poland"],
+                            ["romania", "Romania"],
+                            ["sweden", "Sweden"],
+                            ["switzerland", "Switzerland"],
+                            ["unitedkingdom", "United Kingdom"],
                           ];
 
   const noAtaxyCountries = ["malta", "bulgaria", "cyprus", "estonia", "iceland", "ireland", "italy", "latvia", "moldova", "portugal", "serbia", "slovakia", "slovenia"];
@@ -388,7 +388,7 @@ selectTrendDisease.addEventListener("change", function(ev) {
 
     let spainExists = ($('#geoTrend option[value=spain]').length > 0);
     if (!spainExists) {
-      $('#geoTrend').append($('<option>', { value: "spain", text: 'España'}));
+      $('#geoTrend').append($('<option>', { value: "spain", text: 'Spain'}));
 
     }
 
@@ -821,7 +821,7 @@ var chart = new Chart(document.getElementById('chart-canvas').getContext('2d'), 
 				display: true,
 				scaleLabel: {
 					display: true,
-					labelString: 'Año',
+					labelString: 'Year',
           fontStyle: "bold",
           fontSize: 18,
 				},
@@ -835,7 +835,7 @@ var chart = new Chart(document.getElementById('chart-canvas').getContext('2d'), 
 				display: true,
 				scaleLabel: {
 					display: true,
-					labelString: 'Tasa ajustada por edad / 100.000 habitantes',
+					labelString: 'Rate adjusted for age / 100.000 population',
           fontStyle: "bold",
           fontSize: 18,
 				},
@@ -1015,40 +1015,40 @@ function addPeriodInfoToDom () {
 
   if (periodValues.category === "huntington") {
     if (periodValues.geo === "country") {
-      document.getElementById('period-info').innerHTML = '*Periodo de datos:<br>&nbsp;&nbsp;&nbsp;Austria: 2002 - 2013<br>&nbsp;&nbsp;&nbsp;España: 1999 - 2014<br>&nbsp;&nbsp;&nbsp;Resto: 2001 - 2012';
+      document.getElementById('period-info').innerHTML = '*Data period:<br>&nbsp;&nbsp;&nbsp;Austria: 2002 - 2013<br>&nbsp;&nbsp;&nbsp;Spain: 1999 - 2014<br>&nbsp;&nbsp;&nbsp;Remainder: 2001 - 2012';
 
     } else if (periodValues.geo === "province" || periodValues.geo === "district") {
-      document.getElementById('period-info').innerHTML = '*Periodo de datos: 1999 - 2013';
+      document.getElementById('period-info').innerHTML = '*Data period: 1999 - 2013';
 
     } else {
-      document.getElementById('period-info').innerHTML = '*Periodo de datos:';
+      document.getElementById('period-info').innerHTML = '*Data period:';
 
     }
   } else if (periodValues.category === "neuron") {
     if (periodValues.geo === "country") {
-      document.getElementById('period-info').innerHTML = '*Periodo de datos: <br>&nbsp;&nbsp;&nbsp;Austria: 2002 - 2014<br>&nbsp;&nbsp;&nbsp;Dinamarca: 2000 - 2012<br>&nbsp;&nbsp;&nbsp;España: 1999 - 2014<br>&nbsp;&nbsp;&nbsp;Resto: 2000 - 2013';
+      document.getElementById('period-info').innerHTML = '*Data period: <br>&nbsp;&nbsp;&nbsp;Austria: 2002 - 2014<br>&nbsp;&nbsp;&nbsp;Dinamarca: 2000 - 2012<br>&nbsp;&nbsp;&nbsp;España: 1999 - 2014<br>&nbsp;&nbsp;&nbsp;Remainder: 2000 - 2013';
 
     } else if (periodValues.geo === "province" || periodValues.geo === "district") {
-      document.getElementById('period-info').innerHTML = '*Periodo de datos: 1999 - 2013';
+      document.getElementById('period-info').innerHTML = '*Data period: 1999 - 2013';
 
     } else {
-      document.getElementById('period-info').innerHTML = '*Periodo de datos:';
+      document.getElementById('period-info').innerHTML = '*Data period:';
 
     }
 
   } else if (periodValues.category === "ataxy") {
     if (periodValues.geo === "country") {
-      document.getElementById('period-info').innerHTML = '*Periodo de datos:<br>&nbsp;&nbsp;&nbsp;Austria: 2002 - 2014<br>&nbsp;&nbsp;&nbsp;España: 1999 - 2014<br>&nbsp;&nbsp;&nbsp;Reino Unido: 2000 - 2013<br>&nbsp;&nbsp;&nbsp;Resto: 2000 - 2012';
+      document.getElementById('period-info').innerHTML = '*Data period:<br>&nbsp;&nbsp;&nbsp;Austria: 2002 - 2014<br>&nbsp;&nbsp;&nbsp;Spain: 1999 - 2014<br>&nbsp;&nbsp;&nbsp;United Kingdom: 2000 - 2013<br>&nbsp;&nbsp;&nbsp;Remainder: 2000 - 2012';
 
     } else if (periodValues.geo === "province" || periodValues.geo === "district") {
-      document.getElementById('period-info').innerHTML = '*Periodo de datos: 1999 - 2013';
+      document.getElementById('period-info').innerHTML = '*Data period: 1999 - 2013';
 
     } else {
-      document.getElementById('period-info').innerHTML = '*Periodo de datos:';
+      document.getElementById('period-info').innerHTML = '*Data period:';
 
     }
 
   } else {
-    document.getElementById('period-info').innerHTML = '*Periodo de datos: 1999 - 2013';
+    document.getElementById('period-info').innerHTML = '*Data period: 1999 - 2013';
   }
 }
