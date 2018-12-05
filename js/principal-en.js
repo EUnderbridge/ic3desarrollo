@@ -119,6 +119,22 @@ selectDisease.addEventListener("change", function(ev) {
 
   }
 
+  if (selectDisease.value === "ataxy") {
+    var privinceExists = ($('#geoMap option[value=province]').length > 0);
+    var districtExists = ($('#geoMap option[value=district]').length > 0);
+
+    if (privinceExists) {
+      $("#geoMap option[value='province']").remove();
+
+    }
+
+    if (districtExists) {
+     $("#geoMap option[value='district']").remove();
+
+   }
+
+  }
+
 });
 
 
@@ -145,7 +161,7 @@ selectGeoUnit.addEventListener("change", function(ev) {
     // add ta if not exists
     let taExists = ($('#rate option[value=ta]').length > 0);
     if (!taExists) {
-      $('#rate').append($('<option>', { value: "ta", text: 'Rate adjusted for age'}));
+      $('#rate').append($('<option>', { value: "ta", text: 'Age-adjusted Mortality Rate'}));
 
     }
 
@@ -174,6 +190,8 @@ selectGeoUnit.addEventListener("change", function(ev) {
       $("#rate option[value='ta']").remove();
 
     }
+
+    $('#rate option[value="rme"]').attr("selected", true);
   }
 
   // only pps, rrs y rme indicator (NO TA)
@@ -182,14 +200,14 @@ selectGeoUnit.addEventListener("change", function(ev) {
     // add pps if not exists
     let ppsExists = ($('#rate option[value=pps]').length > 0);
     if (!ppsExists) {
-      $('#rate').append($('<option>', { value: "pps", text: 'Probability to Posteriori'}));
+      $('#rate :nth-child(2)').after("<option value='pps'>Posterior Probability</option>");
 
     }
 
     // add rrs if not exists
     let rrsExists = ($('#rate option[value=rrs]').length > 0);
     if (!rrsExists) {
-      $('#rate').append($('<option>', { value: "rrs", text: 'Standardized Smoothed Mortality Ratio'}));
+      $('#rate :nth-child(2)').after("<option value='rrs'>Smoothed Standardized Mortality Ratio</option>");
 
     }
 
@@ -197,6 +215,7 @@ selectGeoUnit.addEventListener("change", function(ev) {
     let rmeExists = ($('#rate option[value=rme]').length > 0);
     if (!rmeExists) {
       $('#rate').append($('<option>', { value: "rme", text: 'Standardized Mortality Ratio'}));
+
 
     }
 
@@ -318,8 +337,6 @@ selectTrendDisease.addEventListener("change", function(ev) {
 
 
 
-
-
   if (selectTrendDisease.value === "huntington") {
 
     for (let elm in huntingtonCountries) {
@@ -376,6 +393,8 @@ selectTrendDisease.addEventListener("change", function(ev) {
 
   } else {
 
+    $('#geoTrend option[value="spain"]').attr("selected", true);
+
     for (let elm in huntingtonCountries) {
 
       let exists = ($('#geoTrend option[value=' + huntingtonCountries[Number(elm)][0] +']').length > 0);
@@ -416,18 +435,17 @@ function validateMapForm () {
   let formElements = serializeMapFormValues();
 
   if (!formElements.category) {
-    msg("error", "Por favor, seleccione una enfermedad rara.")
+    msg("error", "Please, select a Rare disease.")
 
   } else if (!formElements.geo) {
-    msg("error", "Por favor, seleccione una unidad geográfica.")
+    msg("error", "Please, select a Geographical unit.")
 
   } else if (!formElements.rate) {
-    msg("error", "Por favor, seleccione un indicador epidemiológico.")
+    msg("error", "Please, select an  Epidemiological indicator.")
 
   } else if (!formElements.sex) {
-    msg("error", "Por favor, seleccione un sexo.")
+    msg("error", "PPlease, select a sex.")
 
-  } else {
   };
 }
 
@@ -450,12 +468,11 @@ function validateTrendForm () {
   let formElements = serializeTrendFormValues();
 
   if (!formElements.category) {
-    msg("error", "Por favor, seleccione una enfermedad rara.")
+    msg("error", "Please, select a rare disease.")
 
   } else if (!formElements.geo) {
-    msg("error", "Por favor, seleccione un país.")
+    msg("error", "Please, select a country.")
 
-  } else {
   };
 }
 
@@ -512,7 +529,12 @@ function addMouseListenerToFeature(feature, layer) {
 
 };
 
-
+function transparentStyle () {
+  return {
+    "color": "#f2f2f2",
+    "fillOpacity": 0.99
+  }
+}
 
 
 let lastAddeddLayer = null;
@@ -520,7 +542,7 @@ function addRateDataLayer(layer) {
   // Color classification for features based on rate
   const colorByRate = function(rateType, rateValue) {
     if (rateType === "rrs") {
-      return rateValue > 90   ? '#b3b3b3' :
+      return rateValue > 90   ? 'transparent' :
              rateValue > 1.80 ? '#d73027' :
       			 rateValue > 1.40 ? '#fc8d59' :
       			 rateValue > 1.10 ? '#fee08b' :
@@ -529,7 +551,7 @@ function addRateDataLayer(layer) {
       			 rateValue > 0.50 ? '#91cf60' :
       			 '#1a9850';
     } else if (rateType === "rme") {
-      return rateValue > 90   ? '#b3b3b3' :
+      return rateValue > 90   ? 'transparent' :
              rateValue > 1.35 ? '#d73027' :
       			 rateValue > 1.20 ? '#fc8d59' :
       			 rateValue > 1.05 ? '#fee08b' :
@@ -538,14 +560,14 @@ function addRateDataLayer(layer) {
       			 rateValue > 0.60 ? '#91cf60' :
       			 '#1a9850';
     } else if (rateType === "pps") {
-      return rateValue > 90   ? '#b3b3b3' :
+      return rateValue > 90   ? 'transparent' :
              rateValue > 0.90 ? '#d64700' :
              rateValue > 0.80 ? '#ffaa00' :
              rateValue > 0.20 ? '#ffffbf' :
              rateValue > 0.10 ? '#66c763' :
             '#1a9850';
     } else if (rateType === "ta") {
-      return rateValue > 90   ? '#b3b3b3' :
+      return rateValue > 90   ? 'transparent' :
              rateValue > 0.90 ? '#d64700' :
              rateValue > 0.80 ? '#ffaa00' :
              rateValue > 0.20 ? '#ffffbf' :
@@ -658,8 +680,8 @@ function getColorPPs(rateValue) {
 var legendPPs = L.control({position: 'bottomleft'});
 legendPPs.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),
-      grades = [0, 0.10, 0.20, 0.80, 0.90, 90, 100000000],
-      labels = [ "< 0.1", "0.1 - 0.2", "0.2 - 0.8", "0.8 - 0.9", " > 0.9", "No data"];
+      grades = [0, 0.10, 0.20, 0.80, 0.90, 90],
+      labels = [ "< 0.1", "0.1 - 0.2", "0.2 - 0.8", "0.8 - 0.9", " > 0.9"];
 
   for (var i = 0; i < labels.length; i++) {
     div.innerHTML +=
@@ -686,8 +708,8 @@ function getColorRME(rateValue) {
 var legendRME = L.control({position: 'bottomleft'});
 legendRME.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),
-      grades = [0, 0.6, 0.8, 0.95, 1.05, 1.2, 1.35, 90, 10000000],
-      labels = [" < 0.6", "0.6 - 0.8", "0.8 - 0.95", "0.95 - 1.05", "1.05 - 1.2", "1.2 - 1.35", " > 1.35", "No data"];
+      grades = [0, 0.6, 0.8, 0.95, 1.05, 1.2, 1.35, 90],
+      labels = [" < 0.6", "0.6 - 0.8", "0.8 - 0.95", "0.95 - 1.05", "1.05 - 1.2", "1.2 - 1.35", " > 1.35"];
 
   for (var i = 0; i < labels.length; i++) {
     div.innerHTML +=
@@ -714,8 +736,8 @@ function getColorRRs(rateValue) {
 var legendRRs = L.control({position: 'bottomleft'});
 legendRRs.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),
-      grades = [0, 0.5, 0.7, 0.9, 1.1, 1.4, 1.8, 90, 10000000],
-      labels = [" < 0.5", "0.5 - 0.7", "0.7 - 0.9", "0.9 - 1.15", "1.1 - 1.4", "1.4 - 1.8", " > 1.8", "No data"];
+      grades = [0, 0.5, 0.7, 0.9, 1.1, 1.4, 1.8, 90],
+      labels = [" < 0.5", "0.5 - 0.7", "0.7 - 0.9", "0.9 - 1.15", "1.1 - 1.4", "1.4 - 1.8", " > 1.8"];
 
   for (var i = 0; i < labels.length; i++) {
     div.innerHTML +=
@@ -740,8 +762,8 @@ function getColorTa(rateValue) {
 var legendTa = L.control({position: 'bottomleft'});
 legendTa.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),
-      grades = [0, 0.10, 0.20, 0.80, 0.90, 90, 100000000],
-      labels = [" < 0.1", "0.1 - 0.2", "0.2 - 0.8", "0.8 - 0.9", " > 0.9", "No data"];
+      grades = [0, 0.10, 0.20, 0.80, 0.90, 90],
+      labels = [" < 0.1", "0.1 - 0.2", "0.2 - 0.8", "0.8 - 0.9", " > 0.9"];
 
   for (var i = 0; i < labels.length; i++) {
     div.innerHTML +=
@@ -799,11 +821,14 @@ var chart = new Chart(document.getElementById('chart-canvas').getContext('2d'), 
   options: {
     legend: {
       position: 'top',
+      labels: {
+        usePointStyle: true
+      }
     },
 		responsive: true,
 		title: {
-			display: false,
-			text: 'Tasa ajustada por edad',
+			display: true,
+			text: '',
       fontSize: 14,
       padding: 45
 		},
@@ -821,9 +846,9 @@ var chart = new Chart(document.getElementById('chart-canvas').getContext('2d'), 
 				display: true,
 				scaleLabel: {
 					display: true,
-					labelString: 'Year',
-          fontStyle: "bold",
-          fontSize: 18,
+					labelString: 'Instituto de Investigación de Enfermedades Raras - Instituto de Salud Carlos III',
+          fontSize: 6,
+          position: 'right'
 				},
         ticks: {
           beginAtZero: false,
@@ -835,9 +860,9 @@ var chart = new Chart(document.getElementById('chart-canvas').getContext('2d'), 
 				display: true,
 				scaleLabel: {
 					display: true,
-					labelString: 'Rate adjusted for age / 100.000 population',
+					labelString: 'Age-adjusted Mortality Rate per 100,000 inhabitants',
           fontStyle: "bold",
-          fontSize: 18,
+          fontSize: 12,
 				},
         ticks: {
           beginAtZero: true,
@@ -869,21 +894,24 @@ function updateChartWithXlsxData(xlsxData) {
       data: datasetBothData,
       borderColor: "#e9a917",
       backgroundColor: "transparent",
-      spanGaps: true
+      spanGaps: true,
+      pointStyle: 'line'
     },
     {
-      label: "Hombres",
+      label: "Men",
       data: datasetMenData,
       borderColor: "#76a892",
       backgroundColor: "transparent",
-      spanGaps: true
+      spanGaps: true,
+      pointStyle: 'line'
     },
     {
-      label: "Mujeres",
+      label: "Women",
       data: datasetWomenData,
       borderColor: "#ed422d",
       backgroundColor: "transparent",
-      spanGaps: true
+      spanGaps: true,
+      pointStyle: 'line'
     },
   ]);
 }
@@ -991,6 +1019,9 @@ trendSubmitButton.addEventListener("click", function(ev) {
   } else {
     DataService.getTrendDiseaseDataByCountry(disease, country, dataSheetCallback);
   }
+
+  chart.options.title.text = $( "#rare-disease-trend option:selected" ).text() + " (" + $( "#geoTrend option:selected" ).text() + ")";
+  chart.update();
 });
 
 /* Alert error system */
@@ -1015,7 +1046,7 @@ function addPeriodInfoToDom () {
 
   if (periodValues.category === "huntington") {
     if (periodValues.geo === "country") {
-      document.getElementById('period-info').innerHTML = '*Data period:<br>&nbsp;&nbsp;&nbsp;Austria: 2002 - 2013<br>&nbsp;&nbsp;&nbsp;Spain: 1999 - 2014<br>&nbsp;&nbsp;&nbsp;Remainder: 2001 - 2012';
+      document.getElementById('period-info').innerHTML = '*Data period:<br>&nbsp;&nbsp;&nbsp;Austria: 2002 - 2013<br>&nbsp;&nbsp;&nbsp;Remainder: 2001 - 2012';
 
     } else if (periodValues.geo === "province" || periodValues.geo === "district") {
       document.getElementById('period-info').innerHTML = '*Data period: 1999 - 2013';
@@ -1026,7 +1057,7 @@ function addPeriodInfoToDom () {
     }
   } else if (periodValues.category === "neuron") {
     if (periodValues.geo === "country") {
-      document.getElementById('period-info').innerHTML = '*Data period: <br>&nbsp;&nbsp;&nbsp;Austria: 2002 - 2014<br>&nbsp;&nbsp;&nbsp;Dinamarca: 2000 - 2012<br>&nbsp;&nbsp;&nbsp;España: 1999 - 2014<br>&nbsp;&nbsp;&nbsp;Remainder: 2000 - 2013';
+      document.getElementById('period-info').innerHTML = '*Data period: <br>&nbsp;&nbsp;&nbsp;Austria: 2002 - 2014<br>&nbsp;&nbsp;&nbsp;Denmark: 2000 - 2012<br>&nbsp;&nbsp;&nbsp;Remainder: 2000 - 2013';
 
     } else if (periodValues.geo === "province" || periodValues.geo === "district") {
       document.getElementById('period-info').innerHTML = '*Data period: 1999 - 2013';
@@ -1038,7 +1069,7 @@ function addPeriodInfoToDom () {
 
   } else if (periodValues.category === "ataxy") {
     if (periodValues.geo === "country") {
-      document.getElementById('period-info').innerHTML = '*Data period:<br>&nbsp;&nbsp;&nbsp;Austria: 2002 - 2014<br>&nbsp;&nbsp;&nbsp;Spain: 1999 - 2014<br>&nbsp;&nbsp;&nbsp;United Kingdom: 2000 - 2013<br>&nbsp;&nbsp;&nbsp;Remainder: 2000 - 2012';
+      document.getElementById('period-info').innerHTML = '*Data period:<br>&nbsp;&nbsp;&nbsp;Austria: 2002 - 2014<br>&nbsp;&nbsp;&nbsp;United Kingdom: 2000 - 2013<br>&nbsp;&nbsp;&nbsp;Remainder: 2000 - 2012';
 
     } else if (periodValues.geo === "province" || periodValues.geo === "district") {
       document.getElementById('period-info').innerHTML = '*Data period: 1999 - 2013';

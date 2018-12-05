@@ -49,7 +49,7 @@
 					<div id="tab-box">
 
 						<ul class="tabs">
-					     <li><a href="#tab1">Cartografía</a></li>
+					     <li><a href="#tab1">Mapas</a></li>
 					     <li><a href="#tab2">Tendencias</a></li>
 					 	</ul>
 
@@ -113,7 +113,7 @@
 															<form id="administrative-limit-form">
 																	<select id="geoMap" name="geoMap">
 																			<option value="" selected disabled hidden>Seleccionar</option>
-																			<option value="country">Pais</option>
+																			<!-- <option value="country">Pais</option> -->
 																			<option value="province">Provincia</option>
 																			<option value="district">Comarca</option>
 																	</select>
@@ -125,9 +125,9 @@
 															<form id="indicator-form">
 																	<select id="rate" name="rate">
 																			<option value="" selected disabled hidden>Seleccionar</option>
-																			<option value="pps">Probabilidad a Posteriori</option>
 																			<option value="rme">Razón de Mortalidad Estandarizada</option>
 																			<option value="rrs">Razón de Mortalidad Estandarizada Suavizada</option>
+																			<option value="pps">Probabilidad a Posteriori</option>
 																			<option value="ta">Tasa ajustada por edad</option>
 																	</select>
 													</div>
@@ -143,10 +143,14 @@
 																	</select>
 													</div>
 
-													<div id="map-input-div">
-														<input type="submit" value="Enviar" form="form" class="blue" name="map-submit"/>
+													<div id="trend-input-div">
+														<a id='download_link' download='imagen.jpg'>Descargar imagen</a>
+														<!--<input id="download_link" type="button" value="Descargar Gráfico" />-->
+
+														<input type="submit" value="Enviar" form="form" class="blue" name="trend-submit"/>
 														<input type="reset" value="Reset" class="blue">
 													</div>
+
 												</form>
 
 												<div id="period-info" class="period-info">
@@ -304,12 +308,14 @@
 																				<option value="2011">2011</option>
 																				<option value="2012">2012</option>
 																				<option value="2013">2013</option>
-																				<option value="2014">2014</option>
 																		</select>
 																</div>
 												</div>
 
 												<div id="trend-input-div">
+													<a id='download_link' download='imagen.jpg'>Descargar imagen</a>
+													<!--<input id="download_link" type="button" value="Descargar Gráfico" />-->
+
 													<input type="submit" value="Enviar" form="form" class="blue" name="trend-submit"/>
 													<input type="reset" value="Reset" class="blue">
 												</div>
