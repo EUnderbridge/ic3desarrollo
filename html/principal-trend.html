@@ -49,127 +49,13 @@
 					<div id="tab-box">
 
 						<ul class="tabs">
-					     <li><a href="#tab1">Mapas</a></li>
-					     <li><a href="#tab2">Tendencias</a></li>
+					     <li><a href="#tab1">Tendencias</a></li>
+					     <li><a href="#tab2">Mapas</a></li>
 					 	</ul>
 
 						<div class="tab_container">
 
 						    <div id="tab1" class="tab_content" >
-									<div id="" class="left-side-content">
-										<div id="map">
-										</div>
-									</div>
-
-									<div id="" class="right-side-content">
-										<div id="form-div">
-											<form id="map-form"  action="" onsubmit="return validateMapForm()">
-
-												<div id="disease-div">
-														<label> Enfermedad rara:</label>
-														<form id="rare-disease-form">
-																<select id="rare-disease" name="rare-disease">
-																		<option value="" selected disabled hidden>Seleccionar</option>
-																		<option value="total" class="optionGroup">Total Enfermedades Raras</option>
-																		<option value="blood" class="optionGroup">Enfermedades raras de la sangre y de los órganos hematopoyéticos y otros trastornos que afectan al mecanismo de la inmunidad</option>
-																		<option value="anemia" class="optionChild">&nbsp;&nbsp;&nbsp;Anemias hemolíticas hereditarias</option>
-																		<option value="sarcoidosis" class="optionChild">&nbsp;&nbsp;&nbsp;Sarcoidosis</option>
-																		<option value="endocrine" class="optionGroup">Enfermedades raras endocrinas, nutricionales y metabólicas</option>
-																		<option value="aminoacid" class="optionChild">&nbsp;&nbsp;&nbsp;Alteraciones en el metabolismo de los aminoácidos</option>
-																		<option value="fibrosis" class="optionChild">&nbsp;&nbsp;&nbsp;Fibrosis quística</option>
-																		<option value="mucopolysaccharidosis" class="optionChild">&nbsp;&nbsp;&nbsp;Mucopolisacaridosis</option>
-																		<option value="nerve" class="optionGroup">Enfermedades raras del sistema nervioso</option>
-																		<option value="ataxy" class="optionChild">&nbsp;&nbsp;&nbsp;Ataxias hereditarias</option>
-																		<option value="dystrophy" class="optionChild">&nbsp;&nbsp;&nbsp;Distrofia muscular</option>
-																		<option value="huntington" class="optionChild">&nbsp;&nbsp;&nbsp;Enfermedad de Huntington</option>
-																		<option value="neuron" class="optionChild">&nbsp;&nbsp;&nbsp;Enfermedades de las neuronas motoras</option>
-																		<option value="circulatory" class="optionGroup">Enfermedades raras del sistema circulatorio</option>
-																		<option value="cardio" class="optionChild">&nbsp;&nbsp;&nbsp;Afectación endocárdica y cardiopatías restrictivas</option>
-																		<option value="telangiectasia" class="optionChild">&nbsp;&nbsp;&nbsp;Telangiectasia Hemorrágica Hereditaria</option>
-																		<option value="respiratory" class="optionGroup">Enfermedades raras del sistema respiratorio</option>
-																		<option value="silicosis" class="optionChild">&nbsp;&nbsp;&nbsp;Silicosis</option>
-																		<option value="digestive" class="optionGroup">Enfermedades raras del sistema digestivo</option>
-																		<option value="cirrhosis" class="optionChild">&nbsp;&nbsp;&nbsp;Cirrosis biliar primaria</option>
-																		<option value="skin" class="optionGroup">Enfermedades raras de la piel y del tejido subcutáneo</option>
-																		<option value="pemphigus" class="optionChild">&nbsp;&nbsp;&nbsp;Pénfigo</option>
-																		<option value="genital" class="optionGroup">Enfermedades raras del sistema genitourinario</option>
-																		<option value="bone" class="optionGroup">Enfermedades raras del sistema osteomuscular y del tejido conjuntivo</option>
-																		<option value="scleroderma" class="optionChild">&nbsp;&nbsp;&nbsp;Esclerodermia</option>
-																		<option value="granulomatosis" class="optionChild">&nbsp;&nbsp;&nbsp;Granulomatosis con poliangitis</option>
-																		<option value="polyarteritis" class="optionChild">&nbsp;&nbsp;&nbsp;Poliarteritis nudosa y Chung-Strauss</option>
-																		<option value="anomaly" class="optionGroup">Malformaciones congénitas raras, deformidades y anomalías cromosómicas</option>
-																		<option value="hernia" class="optionChild">&nbsp;&nbsp;&nbsp;Hernia diafragmática congénita</option>
-																		<option value="polymorphs" class="optionChild">&nbsp;&nbsp;&nbsp;Polimalformados</option>
-																		<option value="fallot" class="optionChild">&nbsp;&nbsp;&nbsp;Tetralogía de Fallot</option>
-
-																		<!-- AÑADIR NUEVA ENFERMEDAD -->
-																		<!-- <option value="nombre" class="optionGroup">Nombre completo</option> -->
-																		<!-- <option value="nombre" class="optionChild">&nbsp;&nbsp;&nbsp;Nombre completo</option> -->
-																</select>
-												</div>
-
-													<div id="administrative-limit-div">
-															<label> Unidad geográfica:</label>
-															<form id="administrative-limit-form">
-																	<select id="geoMap" name="geoMap">
-																			<option value="" selected disabled hidden>Seleccionar</option>
-																			<!-- <option value="country">Pais</option> -->
-																			<option value="province">Provincia</option>
-																			<option value="district">Comarca</option>
-																	</select>
-													</div>
-
-
-													<div id="indicator-div">
-															<label> Indicador epidemiológico:</label>
-															<form id="indicator-form">
-																	<select id="rate" name="rate">
-																			<option value="" selected disabled hidden>Seleccionar</option>
-																			<option value="rme">Razón de Mortalidad Estandarizada</option>
-																			<option value="rrs">Razón de Mortalidad Estandarizada Suavizada</option>
-																			<option value="pps">Probabilidad a Posteriori</option>
-																			<option value="ta">Tasa ajustada por edad</option>
-																	</select>
-													</div>
-
-													<div id="sex-div">
-															<label> Sexo:</label>
-															<form id="sex-form">
-																	<select id="sex" name="sex">
-																			<option value="" selected disabled hidden>Seleccionar</option>
-																			<option value="total">Ambos</option>
-																			<option value="women">Mujeres</option>
-																			<option value="men">Hombres</option>
-																	</select>
-													</div>
-
-													<div id="trend-input-div">
-														<a id='download_link' download='imagen.jpg'>Descargar imagen</a>
-														<!--<input id="download_link" type="button" value="Descargar Gráfico" />-->
-
-														<input type="submit" value="Enviar" form="form" class="blue" name="trend-submit"/>
-														<input type="reset" value="Reset" class="blue">
-													</div>
-
-												</form>
-
-												<div id="period-info" class="period-info">
-												</div>
-
-
-
-
-										</div>
-
-
-
-									</div>
-
-						    </div>
-
-						    <div id="tab2" class="tab_content">
-
-
 									<div id="" class="left-side-content">
 
 										<div id="chart-container">
@@ -313,29 +199,135 @@
 												</div>
 
 												<div id="trend-input-div">
-													<a id='download_link' download='imagen.jpg'>Descargar imagen</a>
-													<!--<input id="download_link" type="button" value="Descargar Gráfico" />-->
-
 													<input type="submit" value="Enviar" form="form" class="blue" name="trend-submit"/>
 													<input type="reset" value="Reset" class="blue">
 												</div>
 
 											</form>
 
+											<div class="download-container">
+												<a id='download_link' download='imagen.jpg'><img src="../img/btn/download.png"></a>
+											</div>
+
 
 										</div>
+									</div>
+						    </div>
+
+						    <div id="tab2" class="tab_content">
+									<div id="" class="left-side-content">
+									  <div id="map">
+									  </div>
+									</div>
+
+									<div id="" class="right-side-content">
+									  <div id="form-div">
+									    <form id="map-form"  action="" onsubmit="return validateMapForm()">
+
+									      <div id="disease-div">
+									          <label> Enfermedad rara:</label>
+									          <form id="rare-disease-form">
+									              <select id="rare-disease" name="rare-disease">
+									                  <option value="" selected disabled hidden>Seleccionar</option>
+									                  <option value="total" class="optionGroup">Total Enfermedades Raras</option>
+									                  <option value="blood" class="optionGroup">Enfermedades raras de la sangre y de los órganos hematopoyéticos y otros trastornos que afectan al mecanismo de la inmunidad</option>
+									                  <option value="anemia" class="optionChild">&nbsp;&nbsp;&nbsp;Anemias hemolíticas hereditarias</option>
+									                  <option value="sarcoidosis" class="optionChild">&nbsp;&nbsp;&nbsp;Sarcoidosis</option>
+									                  <option value="endocrine" class="optionGroup">Enfermedades raras endocrinas, nutricionales y metabólicas</option>
+									                  <option value="aminoacid" class="optionChild">&nbsp;&nbsp;&nbsp;Alteraciones en el metabolismo de los aminoácidos</option>
+									                  <option value="fibrosis" class="optionChild">&nbsp;&nbsp;&nbsp;Fibrosis quística</option>
+									                  <option value="mucopolysaccharidosis" class="optionChild">&nbsp;&nbsp;&nbsp;Mucopolisacaridosis</option>
+									                  <option value="nerve" class="optionGroup">Enfermedades raras del sistema nervioso</option>
+									                  <option value="ataxy" class="optionChild">&nbsp;&nbsp;&nbsp;Ataxias hereditarias</option>
+									                  <option value="dystrophy" class="optionChild">&nbsp;&nbsp;&nbsp;Distrofia muscular</option>
+									                  <option value="huntington" class="optionChild">&nbsp;&nbsp;&nbsp;Enfermedad de Huntington</option>
+									                  <option value="neuron" class="optionChild">&nbsp;&nbsp;&nbsp;Enfermedades de las neuronas motoras</option>
+									                  <option value="circulatory" class="optionGroup">Enfermedades raras del sistema circulatorio</option>
+									                  <option value="cardio" class="optionChild">&nbsp;&nbsp;&nbsp;Afectación endocárdica y cardiopatías restrictivas</option>
+									                  <option value="telangiectasia" class="optionChild">&nbsp;&nbsp;&nbsp;Telangiectasia Hemorrágica Hereditaria</option>
+									                  <option value="respiratory" class="optionGroup">Enfermedades raras del sistema respiratorio</option>
+									                  <option value="silicosis" class="optionChild">&nbsp;&nbsp;&nbsp;Silicosis</option>
+									                  <option value="digestive" class="optionGroup">Enfermedades raras del sistema digestivo</option>
+									                  <option value="cirrhosis" class="optionChild">&nbsp;&nbsp;&nbsp;Cirrosis biliar primaria</option>
+									                  <option value="skin" class="optionGroup">Enfermedades raras de la piel y del tejido subcutáneo</option>
+									                  <option value="pemphigus" class="optionChild">&nbsp;&nbsp;&nbsp;Pénfigo</option>
+									                  <option value="genital" class="optionGroup">Enfermedades raras del sistema genitourinario</option>
+									                  <option value="bone" class="optionGroup">Enfermedades raras del sistema osteomuscular y del tejido conjuntivo</option>
+									                  <option value="scleroderma" class="optionChild">&nbsp;&nbsp;&nbsp;Esclerodermia</option>
+									                  <option value="granulomatosis" class="optionChild">&nbsp;&nbsp;&nbsp;Granulomatosis con poliangitis</option>
+									                  <option value="polyarteritis" class="optionChild">&nbsp;&nbsp;&nbsp;Poliarteritis nudosa y Chung-Strauss</option>
+									                  <option value="anomaly" class="optionGroup">Malformaciones congénitas raras, deformidades y anomalías cromosómicas</option>
+									                  <option value="hernia" class="optionChild">&nbsp;&nbsp;&nbsp;Hernia diafragmática congénita</option>
+									                  <option value="polymorphs" class="optionChild">&nbsp;&nbsp;&nbsp;Polimalformados</option>
+									                  <option value="fallot" class="optionChild">&nbsp;&nbsp;&nbsp;Tetralogía de Fallot</option>
+
+									                  <!-- AÑADIR NUEVA ENFERMEDAD -->
+									                  <!-- <option value="nombre" class="optionGroup">Nombre completo</option> -->
+									                  <!-- <option value="nombre" class="optionChild">&nbsp;&nbsp;&nbsp;Nombre completo</option> -->
+									              </select>
+									      </div>
+
+									        <div id="administrative-limit-div">
+									            <label> Unidad geográfica:</label>
+									            <form id="administrative-limit-form">
+									                <select id="geoMap" name="geoMap">
+									                    <option value="" selected disabled hidden>Seleccionar</option>
+									                    <!-- <option value="country">Pais</option> -->
+									                    <option value="province">Provincia</option>
+									                    <option value="district">Comarca</option>
+									                </select>
+									        </div>
+
+
+									        <div id="indicator-div">
+									            <label> Indicador epidemiológico:</label>
+									            <form id="indicator-form">
+									                <select id="rate" name="rate">
+									                    <option value="" selected disabled hidden>Seleccionar</option>
+									                    <option value="rme">Razón de Mortalidad Estandarizada</option>
+									                    <option value="rrs">Razón de Mortalidad Estandarizada Suavizada</option>
+									                    <option value="pps">Probabilidad a Posteriori</option>
+									                    <option value="ta">Tasa ajustada por edad</option>
+									                </select>
+									        </div>
+
+									        <div id="sex-div">
+									            <label> Sexo:</label>
+									            <form id="sex-form">
+									                <select id="sex" name="sex">
+									                    <option value="" selected disabled hidden>Seleccionar</option>
+									                    <option value="total">Ambos</option>
+									                    <option value="women">Mujeres</option>
+									                    <option value="men">Hombres</option>
+									                </select>
+									        </div>
+
+									        <div id="trend-input-div">
+									          <!--<a id='download_link' download='imagen.jpg'>Descargar imagen</a>-->
+									          <!--<input id="download_link" type="button" value="Descargar Gráfico" />-->
+
+									          <input type="submit" value="Enviar" form="form" class="blue" name="map-submit"/>
+									          <input type="reset" value="Reset" class="blue">
+									        </div>
+
+									      </form>
+
+									      <div id="period-info" class="period-info">
+									      </div>
+
+												<div class="download-container">
+													<a id='download_link' download='imagen.jpg'><img src="../img/btn/download.png"></a>
+												</div>
+
+									  </div>
 
 									</div>
 
 						    </div>
 
-
 						</div>
 
 					</div>
-
-
-
 
 				</div>
 

@@ -753,29 +753,103 @@ legendRRs.onAdd = function (map) {
 
 
 // Legend color classification based on TA rate
-function getColorTa(rateValue) {
+function getColorTaHuntington(rateValue) {
   return rateValue > 90 ? '#b3b3b3' :
-         rateValue > 0.9 ? '#d64700' :
-         rateValue > 0.8 ? '#ffaa00' :
-         rateValue > 0.2 ? '#ffffbf' :
-         rateValue > 0.1 ? '#66c763' :
-         '#1a9850';
+         rateValue > 0.32 ? '#993404' :
+         rateValue > 0.16 ? '#d95f0e' :
+         rateValue > 0.11 ? '#fe9929' :
+         rateValue > 0.04 ? '#fed98e' :
+         '#ffffd4';
 }
 
-// TA legend configuration
-var legendTa = L.control({position: 'bottomleft'});
-legendTa.onAdd = function (map) {
+// TA Huntington legend configuration
+var legendTaHuntington = L.control({position: 'bottomleft'});
+legendTaHuntington.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),
       grades = [0, 0.10, 0.20, 0.80, 0.90, 90],
-      labels = [" < 0.1", "0.1 - 0.2", "0.2 - 0.8", "0.8 - 0.9", " > 0.9"];
+      labels = [" < 0.04", "0.04 - 0.11", "0.11 - 0.16", "0.16 - 0.32", " > 0.32"];
 
   for (var i = 0; i < labels.length; i++) {
     div.innerHTML +=
-    '<i style="background:' + getColorTa(grades[i+1]) + '"></i> ' +
+    '<i style="background:' + getColorTaHuntington(grades[i+1]) + '"></i> ' +
     labels[i] + '<br>';
   }
   return div;
 }
+
+function getColorTaNeuron(rateValue) {
+  return rateValue > 90 ? '#b3b3b3' :
+         rateValue > 1.9 ? '#993404' :
+         rateValue > 1.59 ? '#d95f0e' :
+         rateValue > 1.35 ? '#fe9929' :
+         rateValue > 0.8 ? '#fed98e' :
+         '#ffffd4';
+}
+
+// TA Neuron legend configuration
+var legendTaNeuron = L.control({position: 'bottomleft'});
+legendTaNeuron.onAdd = function (map) {
+  var div = L.DomUtil.create('div', 'info legend'),
+      grades = [0, 0.10, 0.20, 0.80, 0.90, 90],
+      labels = [" < 0.8", "0.8 - 1.35", "1.35 - 1.59", "1.59 - 1.9", " > 1.9"];
+
+  for (var i = 0; i < labels.length; i++) {
+    div.innerHTML +=
+    '<i style="background:' + getColorTaNeuron(grades[i+1]) + '"></i> ' +
+    labels[i] + '<br>';
+  }
+  return div;
+}
+
+function getColorTaAtaxy(rateValue) {
+  return rateValue > 90 ? '#b3b3b3' :
+         rateValue > 0.08 ? '#993404' :
+         rateValue > 0.07 ? '#d95f0e' :
+         rateValue > 0.05 ? '#fe9929' :
+         rateValue > 0.018 ? '#fed98e' :
+         '#ffffd4';
+}
+
+// TA Ataxy legend configuration
+var legendTaAtaxy = L.control({position: 'bottomleft'});
+legendTaAtaxy.onAdd = function (map) {
+  var div = L.DomUtil.create('div', 'info legend'),
+      grades = [0, 0.10, 0.20, 0.80, 0.90, 90],
+      labels = [" < 0.018", "0.018 - 0.05", "0.05 - 0.07", "0.07 - 0.08", " > 0.08"];
+
+  for (var i = 0; i < labels.length; i++) {
+    div.innerHTML +=
+    '<i style="background:' + getColorTaAtaxy(grades[i+1]) + '"></i> ' +
+    labels[i] + '<br>';
+  }
+  return div;
+}
+
+/* NUEVA LEYENDA
+function getColorTaDisease(rateValue) {
+  return rateValue > 90 ? '#b3b3b3' :
+         rateValue > 0.08 ? '#993404' :
+         rateValue > 0.07 ? '#d95f0e' :
+         rateValue > 0.05 ? '#fe9929' :
+         rateValue > 0.018 ? '#fed98e' :
+         '#ffffd4';
+}
+
+// TA Disease legend configuration
+var legendTaDisease = L.control({position: 'bottomleft'});
+legendTaDisease.onAdd = function (map) {
+  var div = L.DomUtil.create('div', 'info legend'),
+      grades = [0, 0.10, 0.20, 0.80, 0.90, 90],
+      labels = [" < 0.018", "0.018 - 0.05", "0.05 - 0.07", "0.07 - 0.08", " > 0.08"];
+
+  for (var i = 0; i < labels.length; i++) {
+    div.innerHTML +=
+    '<i style="background:' + getColorTaDisease(grades[i+1]) + '"></i> ' +
+    labels[i] + '<br>';
+  }
+  return div;
+} */
+
 
 
 /* MAP --- Information control configuration*/
@@ -818,7 +892,7 @@ var infoLegend = createInfoControl();
 
 // Chart configuration
 var fv = serializeTrendFormValues();
-document.getElementById('chart-canvas').getContext('2d').fillStyle = "white";
+/*document.getElementById('chart-canvas').getContext('2d').fillStyle = "white";
 document.getElementById('download_link').href = "javascript: void(0)";
 var backgroundColor = 'white';
 //var url_base64 = '';
@@ -828,7 +902,8 @@ Chart.plugins.register({
         ctx.fillStyle = backgroundColor;
         ctx.fillRect(0, 0, c.chart.width, c.chart.height);
     }
-});
+});*/
+
 var chart = new Chart(document.getElementById('chart-canvas').getContext('2d'), {
   type: 'line',
   scaleFontColor: 'red',
@@ -861,14 +936,15 @@ var chart = new Chart(document.getElementById('chart-canvas').getContext('2d'), 
 				scaleLabel: {
 					display: true,
           labelString: 'Instituto de Investigación de Enfermedades Raras - Instituto de Salud Carlos III',
-          fontSize: 6,
-          position: 'right'
+          fontSize: 10,
+
 				},
         ticks: {
           beginAtZero: false,
           min: 0,
           suggestedMin: 0
         },
+
 			}],
 			yAxes: [{
 				display: true,
@@ -885,16 +961,16 @@ var chart = new Chart(document.getElementById('chart-canvas').getContext('2d'), 
         },
 			}]
 		},
-    animation : {
+    /*animation : {
         onComplete : done
-    }
+    }*/
 	}
 });
 
-function done(){
+/*function done(){
 	var url_base64 = document.getElementById('chart-canvas').toDataURL('image/jpeg');
 	document.getElementById('download_link').href = url_base64;
-};
+};*/
 
 
 //Update chart with rate data from xlsx files
@@ -964,7 +1040,7 @@ function filterChartDataByYearRange(data, yearStart, yearEnd) {
 
 
 // Visualize map information
-var mapSubmitButton = document.querySelector("input[type=submit]");
+var mapSubmitButton = document.querySelector("input[name=map-submit]");
 var currentLegend = L.control();                                                // Need to preserve the object to use later when you remove it
 mapSubmitButton.addEventListener("click", function(ev) {
   ev.preventDefault();
@@ -1008,12 +1084,31 @@ mapSubmitButton.addEventListener("click", function(ev) {
     currentLegend.addTo(map);
 
   } else if (mapForm.rate === "ta") {
-    map.removeControl(currentLegend);
-    currentLegend = legendTa;
-    currentLegend.addTo(map);
+    if (mapForm.category === "huntington") {
+      map.removeControl(currentLegend);
+      currentLegend = legendTaHuntington;
+      currentLegend.addTo(map);
+
+    } else if (mapForm.category === "neuron") {
+      map.removeControl(currentLegend);
+      currentLegend = legendTaNeuron;
+      currentLegend.addTo(map);
+
+    } else if (mapForm.category === "ataxy") {
+      map.removeControl(currentLegend);
+      currentLegend = legendTaAtaxy;
+      currentLegend.addTo(map);
+
+    } /* else if (mapForm.category === "diseaseName") {
+      map.removeControl(currentLegend);
+      currentLegend = legendTaDisease;
+      currentLegend.addTo(map);
+
+    } */
 
   } else {
-    console.log("No rate")
+    console.log("No rate");
+
   }
 
   // Add info control legend

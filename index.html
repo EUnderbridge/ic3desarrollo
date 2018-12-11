@@ -13,7 +13,7 @@
     <!-- Estilos -->
     <link type="text/css" rel="stylesheet" href="vendor/bootstrap.min.css">            <!--  BOOTSTRAP  -->
     <link type="text/css" rel="stylesheet" href="vendor/font-awesome.min.css">         <!--  ICONOS  -->
-    <link type="text/css" rel="stylesheet" href="css/style.css">                    <!--  ESTILOS  -->
+    <link type="text/css" rel="stylesheet" href="css/style.css">                       <!--  ESTILOS  -->
 
     <!-- Responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
@@ -24,70 +24,24 @@
 
     <div id="preloader-container">
 			<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
 		</div>
-
-
-
-    <header id="hero" class="text-center">
-
-      <div class="container-fluid top">
-
-        <div class="row">
-
-          <div class="col-xs-12">
-
-            <h1>Mortalidad debida a enfermedades raras</h1>
-
-          </div>
-
-            <div class="row">
-              <div  class="col-md-3 col-sm-3 col-xs-3">
-
-              </div>
-
-              <div class="ol-md-6 col-sm-6 col-xs-6">
-                <div  class="col-md-12 col-sm-12 col-xs-12">
-
-                  <a href="html/principal.html"><img src="img/btn/btn-maptrend.png" class="img-responsive img-thumbnail"></a>
-
-                  <a href="html/principal.html">
-                    <h3>Acceso a servicio cartográfico y tendencias</h3>
-                  </a>
-
-                </div>
-
-              </div>
-
-              <div  class="col-md-3 col-sm-3 col-xs-3">
-
-              </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </header>
-
-
 
     <nav class="menu">
 
-      <img src="img/logo/ministerio.png" alt="Logo">
-
+      <img src="img/logo/logo-nav.png" alt="Logo">
 
       <ul>
         <li>
-          <a href="#hero" class="desplazar">Inicio</a>
-        </li>
-
-        <li>
-          <a href="#intro-nosotros" class="desplazar">Presentación</a>
+          <a href="#hero" class="desplazar"><img src="img/btn/home.jpg" class="img-responsive"></a>
         </li>
 
         <li>
           <a href="#fuentes" class="desplazar">Fuentes</a>
+        </li>
+
+        <li>
+          <a href="#indicadores" class="desplazar">Indicadores</a>
         </li>
 
         <li>
@@ -110,55 +64,69 @@
 
     </nav>
 
+    <header id="hero" class="text-center">
 
+      <div class="container-fluid top">
 
-    <main>
+        <div class="row">
 
-      <section id="intro-nosotros" class="padding-section grey-section">
+          <div class="col-xs-12">
 
-        <div class="container-fluid">
-
-          <div class="row justify-content-center">
-
-            <div class="col-md-3"></div>
-
-            <div class="col-md-6">
-
-              <header>
-
-                <h2>Atlas de Mortalidad debida a Enfermedades Raras</h2>
-
-              </header>
-
-            </div>
-
-            <div class="col-md-3"> </div>
+            <h1>Mortalidad atribuida a enfermedades raras</h1>
 
           </div>
 
-          <div class="row justify-content-center">
+            <div class="row">
+              <div  class="col-md-6 col-sm-6 col-xs-6">
+                <div  class="col-md-12 col-sm-12 col-xs-12">
 
-            <div class="col-md-3"></div>
+                  <a href="html/principal-map.html"><img src="img/btn/btn-map.png" class="img-responsive img-thumbnail"></a>
 
-            <div class="col-md-6">
+                  <a href="html/principal-map.html">
+                    <h3>Mapas</h3>
+                  </a>
 
-              <p>
-                Este atlas ofrece información epidemiológica de base poblacional sobre la mortalidad atribuida a Enfermedades Raras, su evolución temporal y variabilidad geográfica.
-              </p>
-              <p>
-                Se presenta esta información como complemento a la procedente de los registros de Enfermedades Raras existentes.
-              </p>
+                </div>
 
-            </div>
+                <div  class="col-md-12 col-sm-12 col-xs-12">
 
-            <div class="col-md-3"> </div>
+                  <a href="html/principal-trend.html"><img src="img/btn/btn-trend.png" class="img-responsive img-thumbnail"></a>
+
+                  <a href="html/principal-trend.html">
+                    <h3>Tendencias</h3>
+                  </a>
+
+                </div>
+
+              </div>
+
+              <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="col-md-1 col-sm-1 col-xs-1">
+
+                </div>
+                <div class="col-md-10 col-sm-10 col-xs-10">
+                    <p>
+                      <br><br><br><br><br><br>
+                      Este atlas ofrece información epidemiológica de base poblacional sobre la mortalidad atribuida a Enfermedades Raras, su evolución temporal y variabilidad geográfica.<br><br>
+                      Se presenta esta información como complemento a la procedente de los registros de Enfermedades Raras existentes.
+                    </p>
+
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-1">
+
+                </div>
+
+              </div>
 
           </div>
 
         </div>
 
-      </section>
+      </div>
 
+    </header>
+
+    <main>
 
       <section id="fuentes" class="padding-section border-bottom">
 
@@ -176,9 +144,9 @@
 
               <article>
 
-                <p>La población y el total de fallecidos en España se han obtenido desde el <a href="https://www.ine.es/">Instituto Nacional de Estadística (INE)</a>, según la causa de defunción, lugar de residencia, sexo y edad.</p>
-                <p>Las causas de defunción atribuidas a Enfermedades Raras se seleccionaron conforme al listado de códigos <a href="https://eciemaps.mscbs.gob.es/">CIE 10</a> de la <a href="https://spainrdr.isciii.es/">Red Española de Registros de Enfermedades Raras para la Investigación (SpainRDR)</a>.</p>
-                <p>Las bases cartográficas se obtuvieron del <a href="https://www.ign.es">Instituto Geográfico Nacional</a>, <a href="https://www.cnig.es/">Centro Nacional de Información Geográfica</a> para los límites municipales, provinciales y autonómicos y del <a href="https://www.mapa.gob.es/">Ministerio de Agricultura, Pesca y Alimentación</a> para los límites comarcales.</p>
+                <p>La población y el total de fallecidos en España se han obtenido desde el <a href="https://www.ine.es/" target="_blank">Instituto Nacional de Estadística (INE)</a>, según la causa de defunción, lugar de residencia, sexo y edad.</p>
+                <p>Las causas de defunción atribuidas a Enfermedades Raras se seleccionaron conforme al listado de códigos <a href="https://eciemaps.mscbs.gob.es/" target="_blank">CIE 10</a> de la <a href="https://spainrdr.isciii.es/" target="_blank">Red Española de Registros de Enfermedades Raras para la Investigación (SpainRDR)</a>.</p>
+                <p>Las bases cartográficas se obtuvieron del <a href="https://www.ign.es" target="_blank">Instituto Geográfico Nacional</a>, <a href="https://www.cnig.es/" target="_blank">Centro Nacional de Información Geográfica</a> para los límites municipales, provinciales y autonómicos y del <a href="https://www.mapa.gob.es/" target="_blank">Ministerio de Agricultura, Pesca y Alimentación</a> para los límites comarcales.</p>
 
               </article>
 
@@ -190,57 +158,60 @@
 
       </section>
 
+      <section id="indicadores" class="padding-section grey-section">
 
-      <section id="fuentes-logo" class="skills-section">
+        <div class="container-fluid">
 
-        <div class="container">
+          <div class="row justify-content-center">
 
-          <div class="row">
+            <div class="col-md-3"></div>
 
-            <div class="col-lg-3 col-md-6 elemento reveal delayed" data-retardo="200ms">
+            <div class="col-md-6">
 
-              <div class="marco">
+              <header>
 
-                  <img class="img-responsive" src="img/logo/logo-sanidad.png"></img>
+                <p class="subtitle">Indicadores epidemiológicos</p>
 
-                </div>
-
-            </div>
-
-
-            <div class="col-lg-3 col-md-6 elemento reveal delayed" data-retardo="400ms">
-
-              <div class="marco">
-
-                  <img class="img-responsive" src="img/logo/logo-amb.png"></img>
-
-                </div>
+              </header>
 
             </div>
 
-            <div class="col-lg-3 col-md-6 elemento reveal delayed" data-retardo="600ms">
+            <div class="col-md-3"> </div>
 
-              <div class="marco">
+          </div>
 
-                <img class="img-responsive" src="img/logo/logo-ine.jpg"></img>
+          <div class="row justify-content-center">
 
-                </div>
+            <div class="col-md-3"></div>
+
+            <div class="col-md-6">
+
+              <p>
+                TAE: ..............
+              </p>
+              <p>
+                RME: ..............
+              </p>
+              <p>
+                RME Suavizado: ..............
+              </p>
+              <p>
+                PP: ..............
+              </p>
 
             </div>
 
-            <div class="col-lg-3 col-md-6 elemento reveal delayed" data-retardo="800ms">
-
-              <div class="marco">
-
-                  <img class="img-responsive" src="img/logo/logo-ign.png"></img>
-
-                </div>
-
-            </div>
+            <div class="col-md-3"> </div>
 
           </div>
 
         </div>
+
+      </section>
+
+      <section id="fuentes-logo">
+
+
 
       </section>
 
@@ -261,13 +232,13 @@
 
               <article>
 
-                <p>Verónica Alonso Ferreira<sup>1</sup>, Científico Titular.</p>
+                <p> -  Verónica Alonso Ferreira<sup>1</sup>, Científico Titular.</p>
 
-                <p>Francisco J Escobar Martínez<sup>2</sup>, Profesor Titular de Universidad.</p>
+                <p> -  Francisco J Escobar Martínez<sup>2</sup>, Profesor Titular de Universidad.</p>
 
-                <p>Germán Sánchez-Díaz<sup>1,2</sup>, Investigador contratado.</p>
+                <p> -  Germán Sánchez Díaz<sup>1,2</sup>, Investigador contratado.</p>
 
-                <p>Manuel Posada de la Paz<sup>1</sup>, Director.<br /><br /></p>
+                <p> -  Manuel Posada de la Paz<sup>1</sup>, Director.<br /><br /></p>
 
 
 
@@ -308,7 +279,7 @@
 
               <div class="marco">
 
-                  <img class="img-responsive" src="img/logo/logo-isciii.png"></img>
+                  <a href="http://www.isciii.es/" target="_blank"><img class="img-responsive" src="img/logo/logo-isciii.png"></a>
 
                 </div>
 
@@ -318,7 +289,8 @@
 
               <div class="marco">
 
-                <img class="img-responsive" src="img/logo/logo-uah.jpg"></img>
+                <a href="https://www.uah.es" target="_blank"><img class="img-responsive" src="img/logo/logo-uah.jpg"></a>
+
 
                 </div>
 
@@ -349,8 +321,6 @@
 
         <div class="col-md-6">
 
-          <h4>Contacto</h4>
-
           <address>
 
             <h2>Instituto de Salud Carlos III</h2>
@@ -358,7 +328,7 @@
             <ul>
               <li><i class="fa fa-home"></i> C/ Sinesio Delgado, 4 (entrada por Avda. Monforte de Lemos, 5) - 28029, Madrid</li>
               <li><i class="fa fa-phone"></i> (+34)  91 822 20 00</li>
-              <li><i class="fa fa-envelope-o"></i> mortalidadraras@isciii.es</li>
+              <li><a href="mailto:mortalidadraras@isciii.es" target="_blank"><i class="fa fa-envelope-o"></i> mortalidadraras@isciii.es</a></li>
               <li><i class="fa fa-clock-o"></i> L-V: 9am-5pm</li>
             </ul>
 
@@ -388,7 +358,7 @@
 
             <small>
 
-              <a href="#">&copy; 2018 Instituto de Salud Carlos III | Universidad de Alcalá</a>
+              <a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&copy; 2018 Instituto de Salud Carlos III | Universidad de Alcalá</a>
 
             </small>
 

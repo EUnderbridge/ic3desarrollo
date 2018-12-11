@@ -86,11 +86,10 @@ html, body {
 /* Secciones de navegación */
 
 #menu section {
-
   position: relative;
 }
 
-#menu section img {
+#menu section:first-of-type img {
   float: left;
   padding: 5px 5px;
   height: 80px;
@@ -100,17 +99,16 @@ html, body {
   width: auto;
 }
 
-#menu section a {
+#menu section a img {
   float: right;
-  padding: 35px 35px 0px 30px;
-  text-decoration: none;
-  font-size: 95%;
-  color: #000000;
+  height: 15px;
+  width: 18px;
+  margin: 40px 15px 0px 0px;
+
+
 }
 
-#menu section a:hover {
-  color: #0f325a;
-}
+
 
 
 /* Formulario */
@@ -164,34 +162,6 @@ html, body {
 #map-input-div input,  #trend-input-div input {
   margin: 0px 35px 0px 0px;
 
-}
-
-#download_link {
-    color: white;
-    background: #4C8FFB;
-    text-decoration: none;
-    font-weight: bold;
-    border: 1px #3079ED solid;
-    padding: 5px 15px 5px 15px;
-    box-shadow: inset 0 1px 0 #80B0FB;
-    margin: 0px 35px 0px 0px;
-    font-family: helvetica;
-    font-size: 17px;
-
-}
-#download_link:hover {
-    color: white;
-    background: #3F83F1;
-    text-decoration: none;
-    font-weight: bold;
-    border: 1px #2F5BB7 solid;
-    padding: 5px 15px 5px 15px;
-    box-shadow: 0 1px 1px #EAEAEA, inset 0 1px 0 #5A94F1;
-    margin: 0px 35px 0px 0px;
-
-}
-#download_link:active {
-    box-shadow: inset 0 2px 5px #2370FE;
 }
 
 .blue {
@@ -473,6 +443,15 @@ canvas {
 .period-info {
   color: red;
   font-size: 14px;
-  padding-top: 425px;
+  padding-top: 400px;
   bottom: 2px;
+}
+
+/* Download button */
+.download-container img {
+  width: 65px;
+  float: right;
+  bottom: 5px;
+  position: absolute;
+
 }

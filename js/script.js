@@ -7,7 +7,7 @@ $(window).on('load', function(){
 
 	// efecto de inicio
 		$('h1').animate({
-			'letter-spacing': '20px'
+			'letter-spacing': '10px'
 		}, 1000);
 	});
 
