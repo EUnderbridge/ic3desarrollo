@@ -571,12 +571,40 @@ function addRateDataLayer(layer) {
              rateValue > 0.10 ? '#66c763' :
             '#1a9850';
     } else if (rateType === "ta") {
-      return rateValue > 90   ? 'transparent' :
-             rateValue > 0.90 ? '#d64700' :
-             rateValue > 0.80 ? '#ffaa00' :
-             rateValue > 0.20 ? '#ffffbf' :
-             rateValue > 0.10 ? '#66c763' :
-            '#1a9850';
+      if (document.querySelector("select#rare-disease").value === "huntington") {
+        return rateValue > 90 ? '#b3b3b3' :
+               rateValue > 0.32 ? '#993404' :
+               rateValue > 0.16 ? '#d95f0e' :
+               rateValue > 0.11 ? '#fe9929' :
+               rateValue > 0.04 ? '#fed98e' :
+               '#ffffd4';
+
+
+      } else if (document.querySelector("select#rare-disease").value === "neuron") {
+        return rateValue > 90 ? '#b3b3b3' :
+               rateValue > 1.9 ? '#993404' :
+               rateValue > 1.59 ? '#d95f0e' :
+               rateValue > 1.35 ? '#fe9929' :
+               rateValue > 0.8 ? '#fed98e' :
+               '#ffffd4';
+
+      } else if (document.querySelector("select#rare-disease").value === "ataxy") {
+        return rateValue > 90 ? '#b3b3b3' :
+               rateValue > 0.08 ? '#993404' :
+               rateValue > 0.07 ? '#d95f0e' :
+               rateValue > 0.05 ? '#fe9929' :
+               rateValue > 0.018 ? '#fed98e' :
+               '#ffffd4';
+
+      } else {
+        return rateValue > 90   ? 'transparent' :
+               rateValue > 0.90 ? '#d64700' :
+               rateValue > 0.80 ? '#ffaa00' :
+               rateValue > 0.20 ? '#ffffbf' :
+               rateValue > 0.10 ? '#66c763' :
+              '#1a9850';
+      }
+
     } else {
       return '#000000';
       throw new Error("No rate found for name " + rateType);
@@ -766,7 +794,7 @@ function getColorTaHuntington(rateValue) {
 var legendTaHuntington = L.control({position: 'bottomleft'});
 legendTaHuntington.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),
-      grades = [0, 0.10, 0.20, 0.80, 0.90, 90],
+      grades = [0, 0.04, 0.11, 0.16, 0.32, 90],
       labels = [" < 0.04", "0.04 - 0.11", "0.11 - 0.16", "0.16 - 0.32", " > 0.32"];
 
   for (var i = 0; i < labels.length; i++) {
@@ -790,7 +818,7 @@ function getColorTaNeuron(rateValue) {
 var legendTaNeuron = L.control({position: 'bottomleft'});
 legendTaNeuron.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),
-      grades = [0, 0.10, 0.20, 0.80, 0.90, 90],
+      grades = [0, 0.8, 1.35, 1.59, 1.9, 90],
       labels = [" < 0.8", "0.8 - 1.35", "1.35 - 1.59", "1.59 - 1.9", " > 1.9"];
 
   for (var i = 0; i < labels.length; i++) {
@@ -814,7 +842,7 @@ function getColorTaAtaxy(rateValue) {
 var legendTaAtaxy = L.control({position: 'bottomleft'});
 legendTaAtaxy.onAdd = function (map) {
   var div = L.DomUtil.create('div', 'info legend'),
-      grades = [0, 0.10, 0.20, 0.80, 0.90, 90],
+      grades = [0, 0.018, 0.05, 0.07, 0.08, 90],
       labels = [" < 0.018", "0.018 - 0.05", "0.05 - 0.07", "0.07 - 0.08", " > 0.08"];
 
   for (var i = 0; i < labels.length; i++) {
