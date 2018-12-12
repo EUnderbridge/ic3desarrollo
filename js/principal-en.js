@@ -109,7 +109,7 @@ selectDisease.addEventListener("change", function(ev) {
 
   }
 
-  if (selectDisease.value === "ataxy" || selectDisease.value === "huntington" || selectDisease.value === "neuron") {
+  /*if (selectDisease.value === "ataxy" || selectDisease.value === "huntington" || selectDisease.value === "neuron") {
     var countryExists = ($('#geoMap option[value=country]').length > 0);
 
     if (!countryExists) {
@@ -117,7 +117,7 @@ selectDisease.addEventListener("change", function(ev) {
 
     }
 
-  }
+  }*/
 
   if (selectDisease.value === "ataxy") {
     var privinceExists = ($('#geoMap option[value=province]').length > 0);
