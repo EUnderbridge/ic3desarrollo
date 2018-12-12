@@ -1122,7 +1122,7 @@ mapSubmitButton.addEventListener("click", function(ev) {
 var trendSubmitButton = document.querySelector("input[name=trend-submit]");
 trendSubmitButton.addEventListener("click", function(ev) {
   ev.preventDefault();
-  const validateTrendFormSubmit = validateTrendForm();
+//  const validateTrendFormSubmit = validateTrendForm();
   const trendForm = serializeTrendFormValues();
   const dataSheetCallback = function(error, dataSheet) {
     if (error) {
