@@ -920,7 +920,8 @@ var infoLegend = createInfoControl();
 
 // Chart configuration
 var fv = serializeTrendFormValues();
-/*document.getElementById('chart-canvas').getContext('2d').fillStyle = "white";
+
+document.getElementById('chart-canvas').getContext('2d').fillStyle = "white";
 document.getElementById('download_link').href = "javascript: void(0)";
 var backgroundColor = 'white';
 //var url_base64 = '';
@@ -930,7 +931,7 @@ Chart.plugins.register({
         ctx.fillStyle = backgroundColor;
         ctx.fillRect(0, 0, c.chart.width, c.chart.height);
     }
-});*/
+});
 
 var chart = new Chart(document.getElementById('chart-canvas').getContext('2d'), {
   type: 'line',
@@ -989,16 +990,16 @@ var chart = new Chart(document.getElementById('chart-canvas').getContext('2d'), 
         },
 			}]
 		},
-    /*animation : {
+    animation : {
         onComplete : done
-    }*/
+    }
 	}
 });
 
-/*function done(){
+function done(){
 	var url_base64 = document.getElementById('chart-canvas').toDataURL('image/jpeg');
 	document.getElementById('download_link').href = url_base64;
-};*/
+};
 
 
 //Update chart with rate data from xlsx files
