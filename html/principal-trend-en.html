@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 
-		<title>Enfermedades raras </title>
+		<title>Rare Disease Server</title>
 
 		<link rel="stylesheet" href="../vendor/font-awesome.min.css">
 		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
@@ -33,13 +33,20 @@
 				<div id="menu">
 
 					<section>
-						<img src="../img/logo/ministerio.png" alt="Logo">
+						<img src="../img/logo/logo-nav.png" alt="Logo">
 					</section>
 
 					<section>
-						<a href="../index.html">INICIO</a>
+						<a href="principal-trend-en.html"><img src="../img/btn/en.png" class="img-responsive"></a>
 					</section>
 
+					<section>
+						<a href="principal-trend.html"><img src="../img/btn/es.png" class="img-responsive"></a>
+					</section>
+
+					<section>
+						<a href="../index.html" class="desplazar"><img src="../img/btn/home.jpg" class="img-responsive"></a>
+					</section>
 
 				</div>
 
@@ -49,8 +56,8 @@
 					<div id="tab-box">
 
 						<ul class="tabs">
-					     <li><a href="#tab1">Tendencias</a></li>
-					     <li><a href="#tab2">Mapas</a></li>
+					     <li><a href="#tab1">Time Trends</a></li>
+					     <li><a href="#tab2">Maps</a></li>
 					 	</ul>
 
 						<div class="tab_container">
@@ -66,44 +73,46 @@
 
 									<div id="" class="right-side-content">
 										<div id="form-div">
+											<h4>- Mortality trends attributed to Rare Diseases -</h4>
+
 											<form id="trend-form"  action="" onsubmit="">
 
 												<div id="disease-div">
-														<label> Enfermedad rara:</label>
+														<label> Rare disease:</label>
 														<form id="rare-disease-form">
 																<select id="rare-disease-trend" name="rare-disease">
-																		<option value="" selected disabled hidden>Seleccionar</option>
-																		<option value="total" class="optionGroup">Total Enfermedades Raras</option>
-																		<option value="blood" class="optionGroup">Enfermedades raras de la sangre y de los órganos hematopoyéticos y otros trastornos que afectan al mecanismo de la inmunidad</option>
-																		<option value="anemia" class="optionChild">&nbsp;&nbsp;&nbsp;Anemias hemolíticas hereditarias</option>
-																		<option value="sarcoidosis" class="optionChild">&nbsp;&nbsp;&nbsp;Sarcoidosis</option>
-																		<option value="endocrine" class="optionGroup">Enfermedades raras endocrinas, nutricionales y metabólicas</option>
-																		<option value="aminoacid" class="optionChild">&nbsp;&nbsp;&nbsp;Alteraciones en el metabolismo de los aminoácidos</option>
-																		<option value="fibrosis" class="optionChild">&nbsp;&nbsp;&nbsp;Fibrosis quística</option>
-																		<option value="mucopolysaccharidosis" class="optionChild">&nbsp;&nbsp;&nbsp;Mucopolisacaridosis</option>
-																		<option value="nerve" class="optionGroup">Enfermedades raras del sistema nervioso</option>
-																		<option value="ataxy" class="optionChild">&nbsp;&nbsp;&nbsp;Ataxias hereditarias</option>
-																		<option value="dystrophy" class="optionChild">&nbsp;&nbsp;&nbsp;Distrofia muscular</option>
-																		<option value="huntington" class="optionChild">&nbsp;&nbsp;&nbsp;Enfermedad de Huntington</option>
-																		<option value="neuron" class="optionChild">&nbsp;&nbsp;&nbsp;Enfermedades de las neuronas motoras</option>
-																		<option value="circulatory" class="optionGroup">Enfermedades raras del sistema circulatorio</option>
-																		<option value="cardio" class="optionChild">&nbsp;&nbsp;&nbsp;Afectación endocárdica y cardiopatías restrictivas</option>
-																		<option value="telangiectasia" class="optionChild">&nbsp;&nbsp;&nbsp;Telangiectasia Hemorrágica Hereditaria</option>
-																		<option value="respiratory" class="optionGroup">Enfermedades raras del sistema respiratorio</option>
-																		<option value="silicosis" class="optionChild">&nbsp;&nbsp;&nbsp;Silicosis</option>
-																		<option value="digestive" class="optionGroup">Enfermedades raras del sistema digestivo</option>
-																		<option value="cirrhosis" class="optionChild">&nbsp;&nbsp;&nbsp;Cirrosis biliar primaria</option>
-																		<option value="skin" class="optionGroup">Enfermedades raras de la piel y del tejido subcutáneo</option>
-																		<option value="pemphigus" class="optionChild">&nbsp;&nbsp;&nbsp;Pénfigo</option>
-																		<option value="genital" class="optionGroup">Enfermedades raras del sistema genitourinario</option>
-																		<option value="bone" class="optionGroup">Enfermedades raras del sistema osteomuscular y del tejido conjuntivo</option>
-																		<option value="scleroderma" class="optionChild">&nbsp;&nbsp;&nbsp;Esclerodermia</option>
-																		<option value="granulomatosis" class="optionChild">&nbsp;&nbsp;&nbsp;Granulomatosis con poliangitis</option>
-																		<option value="polyarteritis" class="optionChild">&nbsp;&nbsp;&nbsp;Poliarteritis nudosa y Chung-Strauss</option>
-																		<option value="anomaly" class="optionGroup">Malformaciones congénitas raras, deformidades y anomalías cromosómicas</option>
-																		<option value="hernia" class="optionChild">&nbsp;&nbsp;&nbsp;Hernia diafragmática congénita</option>
-																		<option value="polymorphs" class="optionChild">&nbsp;&nbsp;&nbsp;Polimalformados</option>
-																		<option value="fallot" class="optionChild">&nbsp;&nbsp;&nbsp;Tetralogía de Fallot</option>
+																	<option value="" selected disabled hidden>Select</option>
+																	<option value="total" class="optionGroup">All rare diseases</option>
+																	<option value="blood" class="optionGroup">Rare diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism</option>
+																	<option value="anemia" class="optionChild">&nbsp;&nbsp;&nbsp;Hereditary haemolytic anaemias</option>
+																	<option value="sarcoidosis" class="optionChild">&nbsp;&nbsp;&nbsp;Sarcoidosis</option>
+																	<option value="endocrine" class="optionGroup">Endocrine, nutritional and metabolic rare diseases</option>
+																	<option value="aminoacid" class="optionChild">&nbsp;&nbsp;&nbsp;Amino acid disorders</option>
+																	<option value="fibrosis" class="optionChild">&nbsp;&nbsp;&nbsp;Cystic fibrosis</option>
+																	<option value="mucopolysaccharidosis" class="optionChild">&nbsp;&nbsp;&nbsp;Mucopolysaccharidosis</option>
+																	<option value="nerve" class="optionGroup">Rare diseases of the nervous system</option>
+																	<option value="ataxy" class="optionChild">&nbsp;&nbsp;&nbsp;Hereditary ataxias</option>
+																	<option value="dystrophy" class="optionChild">&nbsp;&nbsp;&nbsp;Muscular dystrophy</option>
+																	<option value="huntington" class="optionChild">&nbsp;&nbsp;&nbsp;Huntington disease</option>
+																	<option value="neuron" class="optionChild">&nbsp;&nbsp;&nbsp;Motor neuron disease</option>
+																	<option value="circulatory" class="optionGroup">Rare diseases of the circulatory system</option>
+																	<option value="cardio" class="optionChild">&nbsp;&nbsp;&nbsp;Endocardial affection and restrictive cardiomyopathy</option>
+																	<option value="telangiectasia" class="optionChild">&nbsp;&nbsp;&nbsp;Hereditary Hemorrhagic Telangiectasia</option>
+																	<option value="respiratory" class="optionGroup">Rare diseases of the respiratory system</option>
+																	<option value="silicosis" class="optionChild">&nbsp;&nbsp;&nbsp;Silicosis</option>
+																	<option value="digestive" class="optionGroup">Rare diseases of the digestive system</option>
+																	<option value="cirrhosis" class="optionChild">&nbsp;&nbsp;&nbsp;Primary biliary cholangitis</option>
+																	<option value="skin" class="optionGroup">Rare diseases of the skin and subcutaneous tissue</option>
+																	<option value="pemphigus" class="optionChild">&nbsp;&nbsp;&nbsp;Pemphigus</option>
+																	<option value="genital" class="optionGroup">Rare diseases of the genitourinary system</option>
+																	<option value="bone" class="optionGroup">Rare diseases of the musculoskeletal system and connective tissue</option>
+																	<option value="scleroderma" class="optionChild">&nbsp;&nbsp;&nbsp;Sclerodermia</option>
+																	<option value="granulomatosis" class="optionChild">&nbsp;&nbsp;&nbsp;Granulomatosis with polyangiitis</option>
+																	<option value="polyarteritis" class="optionChild">&nbsp;&nbsp;&nbsp;Polyarteritis nodosa and Churg-Strauss</option>
+																	<option value="anomaly" class="optionGroup">Rare congenital malformations, deformations and chromosomal abnormalities</option>
+																	<option value="hernia" class="optionChild">&nbsp;&nbsp;&nbsp;Congenital diaphragmatic hernia</option>
+																	<option value="polymorphs" class="optionChild">&nbsp;&nbsp;&nbsp;Polymalformation</option>
+																	<option value="fallot" class="optionChild">&nbsp;&nbsp;&nbsp;Tetralogy of Fallot</option>
 
 																		<!-- AÑADIR NUEVA ENFERMEDAD -->
 																		<!-- <option value="nombre" class="optionGroup">Nombre completo</option> -->
@@ -112,74 +121,74 @@
 												</div>
 
 												<div id="administrative-limit-div">
-														<label> País:</label>
-														<form id="administrative-limit-form">
-																<select id="geoTrend" name="geoTrend">
-																		<option value="" selected disabled hidden>Seleccionar</option>
-																		<option value="germany">Alemania</option>
-																		<option value="austria">Austria</option>
-																		<option value="belgium">Bélgica</option>
-																		<option value="bulgaria">Bulgaria</option>
-																		<option value="croatia">Croacia</option>
-																		<option value="cyprus">Chipre</option>
-																		<option value="czechia">República Checa</option>
-																		<option value="denmark">Dinamarca</option>
-																		<option value="estonia">Estonia</option>
-																		<option value="slovakia">Eslovaquia</option>
-																		<option value="slovenia">Eslovenia</option>
-																		<option value="spain">España</option>
-																		<option value="finland">Finlandia</option>
-																		<option value="france">Francia</option>
-																		<option value="hungary">Hungría</option>
-																		<option value="iceland">Islandia</option>
-																		<option value="ireland">Irlanda</option>
-																		<option value="italy">Italia</option>
-																		<option value="latvia">Letonia</option>
-																		<option value="lithuania">Lituania</option>
-																		<option value="luxembourg">Luxemburgo</option>
-																		<option value="malta">Malta</option>
-																		<option value="moldova">Moldavia</option>
-																		<option value="norway">Noruega</option>
-																		<option value="netherlands">Países Bajos</option>
-																		<option value="poland">Polonia</option>
-																		<option value="portugal">Portugal</option>
-																		<option value="unitedkingdom">Reino Unido</option>
-																		<option value="romania">Rumanía</option>
-																		<option value="serbia">Serbia</option>
-																		<option value="sweden">Suecia</option>
-																		<option value="switzerland">Suiza</option>
+													<label>Country:</label>
+													<form id="administrative-limit-form">
+															<select id="geoTrend" name="geoTrend">
+																	<option value="" selected disabled hidden>Select</option>
+																	<option value="germany">Germany</option>
+																	<option value="austria">Austria</option>
+																	<option value="belgium">Belgium</option>
+																	<option value="bulgaria">Bulgaria</option>
+																	<option value="croatia">Croatia</option>
+																	<option value="cyprus">Cyprus</option>
+																	<option value="czechia">Czechia</option>
+																	<option value="denmark">Denmark</option>
+																	<option value="estonia">Estonia</option>
+																	<option value="slovakia">Slovakia</option>
+																	<option value="slovenia">Slovenia</option>
+																	<option value="spain">Spain</option>
+																	<option value="finland">Finland</option>
+																	<option value="france">France</option>
+																	<option value="hungary">Hungary</option>
+																	<option value="iceland">Iceland</option>
+																	<option value="ireland">Ireland</option>
+																	<option value="italy">Italy</option>
+																	<option value="latvia">Latvia</option>
+																	<option value="lithuania">Lithuania</option>
+																	<option value="luxembourg">Luxembourg</option>
+																	<option value="malta">Malta</option>
+																	<option value="moldova">Moldova</option>
+																	<option value="norway">Norway</option>
+																	<option value="netherlands">Netherlands</option>
+																	<option value="poland">Poland</option>
+																	<option value="portugal">Portugal</option>
+																	<option value="unitedkingdom">United Kingdom</option>
+																	<option value="romania">Romania</option>
+																	<option value="serbia">Serbia</option>
+																	<option value="sweden">Sweden</option>
+																	<option value="switzerland">Switzerland</option>
 																		<!-- <option value="turkey">Turquía</option> -->
 
 																</select>
 												</div>
 
 												<div id="period-div-from">
-														<label> Desde:</label>
-														<form id="period-form-from">
-																<select id="period-from" name="period-from">
-																		<option value="" selected disabled hidden>Seleccionar</option>
-																		<option value="1999">1999</option>
-																		<option value="2000">2000</option>
-																		<option value="2001">2001</option>
-																		<option value="2002">2002</option>
-																		<option value="2003">2003</option>
-																		<option value="2004">2004</option>
-																		<option value="2005">2005</option>
-																		<option value="2006">2006</option>
-																		<option value="2007">2007</option>
-																		<option value="2008">2008</option>
-																		<option value="2009">2009</option>
-																		<option value="2010">2010</option>
-																		<option value="2011">2011</option>
-																		<option value="2012">2012</option>
-																		<option value="2013">2013</option>
+													<label> From:</label>
+													<form id="period-form-from">
+															<select id="period-from" name="period-from">
+																	<option value="" selected disabled hidden>Select</option>
+																	<option value="1999">1999</option>
+																	<option value="2000">2000</option>
+																	<option value="2001">2001</option>
+																	<option value="2002">2002</option>
+																	<option value="2003">2003</option>
+																	<option value="2004">2004</option>
+																	<option value="2005">2005</option>
+																	<option value="2006">2006</option>
+																	<option value="2007">2007</option>
+																	<option value="2008">2008</option>
+																	<option value="2009">2009</option>
+																	<option value="2010">2010</option>
+																	<option value="2011">2011</option>
+																	<option value="2012">2012</option>
+																	<option value="2013">2013</option>
 																</select>
 
 															<div id="period-div-to">
-																<label> Hasta:</label>
+																<label> To:</label>
 																<form id="period-form-to">
 																		<select id="period-to" name="period-to">
-																				<option value="" selected disabled hidden>Seleccionar</option>
+																				<option value="" selected disabled hidden>Select</option>
 																				<option value="2000">2000</option>
 																				<option value="2001">2001</option>
 																				<option value="2002">2002</option>
@@ -194,14 +203,12 @@
 																				<option value="2011">2011</option>
 																				<option value="2012">2012</option>
 																				<option value="2013">2013</option>
+																				<option value="2014">2014</option>
 																		</select>
 																</div>
 												</div>
 
 												<div id="trend-input-div">
-													<!--<a id='download_link' download='imagen.jpg'>Descargar imagen</a>-->
-													<!--<input id="download_link" type="button" value="Descargar Gráfico" />-->
-
 													<input type="submit" value="Enviar" form="form" class="blue" name="trend-submit"/>
 													<input type="reset" value="Reset" class="blue">
 												</div>
@@ -225,44 +232,46 @@
 
 									<div id="" class="right-side-content">
 									  <div id="form-div">
+											<h4>- Atlas of mortality attributed to Rare Diseases -</h4>
+
 									    <form id="map-form"  action="" onsubmit="return validateMapForm()">
 
 									      <div id="disease-div">
-									          <label> Enfermedad rara:</label>
-									          <form id="rare-disease-form">
-									              <select id="rare-disease" name="rare-disease">
-									                  <option value="" selected disabled hidden>Seleccionar</option>
-									                  <option value="total" class="optionGroup">Total Enfermedades Raras</option>
-									                  <option value="blood" class="optionGroup">Enfermedades raras de la sangre y de los órganos hematopoyéticos y otros trastornos que afectan al mecanismo de la inmunidad</option>
-									                  <option value="anemia" class="optionChild">&nbsp;&nbsp;&nbsp;Anemias hemolíticas hereditarias</option>
-									                  <option value="sarcoidosis" class="optionChild">&nbsp;&nbsp;&nbsp;Sarcoidosis</option>
-									                  <option value="endocrine" class="optionGroup">Enfermedades raras endocrinas, nutricionales y metabólicas</option>
-									                  <option value="aminoacid" class="optionChild">&nbsp;&nbsp;&nbsp;Alteraciones en el metabolismo de los aminoácidos</option>
-									                  <option value="fibrosis" class="optionChild">&nbsp;&nbsp;&nbsp;Fibrosis quística</option>
-									                  <option value="mucopolysaccharidosis" class="optionChild">&nbsp;&nbsp;&nbsp;Mucopolisacaridosis</option>
-									                  <option value="nerve" class="optionGroup">Enfermedades raras del sistema nervioso</option>
-									                  <option value="ataxy" class="optionChild">&nbsp;&nbsp;&nbsp;Ataxias hereditarias</option>
-									                  <option value="dystrophy" class="optionChild">&nbsp;&nbsp;&nbsp;Distrofia muscular</option>
-									                  <option value="huntington" class="optionChild">&nbsp;&nbsp;&nbsp;Enfermedad de Huntington</option>
-									                  <option value="neuron" class="optionChild">&nbsp;&nbsp;&nbsp;Enfermedades de las neuronas motoras</option>
-									                  <option value="circulatory" class="optionGroup">Enfermedades raras del sistema circulatorio</option>
-									                  <option value="cardio" class="optionChild">&nbsp;&nbsp;&nbsp;Afectación endocárdica y cardiopatías restrictivas</option>
-									                  <option value="telangiectasia" class="optionChild">&nbsp;&nbsp;&nbsp;Telangiectasia Hemorrágica Hereditaria</option>
-									                  <option value="respiratory" class="optionGroup">Enfermedades raras del sistema respiratorio</option>
-									                  <option value="silicosis" class="optionChild">&nbsp;&nbsp;&nbsp;Silicosis</option>
-									                  <option value="digestive" class="optionGroup">Enfermedades raras del sistema digestivo</option>
-									                  <option value="cirrhosis" class="optionChild">&nbsp;&nbsp;&nbsp;Cirrosis biliar primaria</option>
-									                  <option value="skin" class="optionGroup">Enfermedades raras de la piel y del tejido subcutáneo</option>
-									                  <option value="pemphigus" class="optionChild">&nbsp;&nbsp;&nbsp;Pénfigo</option>
-									                  <option value="genital" class="optionGroup">Enfermedades raras del sistema genitourinario</option>
-									                  <option value="bone" class="optionGroup">Enfermedades raras del sistema osteomuscular y del tejido conjuntivo</option>
-									                  <option value="scleroderma" class="optionChild">&nbsp;&nbsp;&nbsp;Esclerodermia</option>
-									                  <option value="granulomatosis" class="optionChild">&nbsp;&nbsp;&nbsp;Granulomatosis con poliangitis</option>
-									                  <option value="polyarteritis" class="optionChild">&nbsp;&nbsp;&nbsp;Poliarteritis nudosa y Chung-Strauss</option>
-									                  <option value="anomaly" class="optionGroup">Malformaciones congénitas raras, deformidades y anomalías cromosómicas</option>
-									                  <option value="hernia" class="optionChild">&nbsp;&nbsp;&nbsp;Hernia diafragmática congénita</option>
-									                  <option value="polymorphs" class="optionChild">&nbsp;&nbsp;&nbsp;Polimalformados</option>
-									                  <option value="fallot" class="optionChild">&nbsp;&nbsp;&nbsp;Tetralogía de Fallot</option>
+													<label> Rare disease:</label>
+													<form id="rare-disease-form">
+															<select id="rare-disease" name="rare-disease">
+																	<option value="" selected disabled hidden>Select</option>
+																	<option value="total" class="optionGroup">All rare diseases</option>
+																	<option value="blood" class="optionGroup">Rare diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism</option>
+																	<option value="anemia" class="optionChild">&nbsp;&nbsp;&nbsp;Hereditary haemolytic anaemias</option>
+																	<option value="sarcoidosis" class="optionChild">&nbsp;&nbsp;&nbsp;Sarcoidosis</option>
+																	<option value="endocrine" class="optionGroup">Endocrine, nutritional and metabolic rare diseases</option>
+																	<option value="aminoacid" class="optionChild">&nbsp;&nbsp;&nbsp;Amino acid disorders</option>
+																	<option value="fibrosis" class="optionChild">&nbsp;&nbsp;&nbsp;Cystic fibrosis</option>
+																	<option value="mucopolysaccharidosis" class="optionChild">&nbsp;&nbsp;&nbsp;Mucopolysaccharidosis</option>
+																	<option value="nerve" class="optionGroup">Rare diseases of the nervous system</option>
+																	<option value="ataxy" class="optionChild">&nbsp;&nbsp;&nbsp;Hereditary ataxias</option>
+																	<option value="dystrophy" class="optionChild">&nbsp;&nbsp;&nbsp;Muscular dystrophy</option>
+																	<option value="huntington" class="optionChild">&nbsp;&nbsp;&nbsp;Huntington disease</option>
+																	<option value="neuron" class="optionChild">&nbsp;&nbsp;&nbsp;Motor neuron disease</option>
+																	<option value="circulatory" class="optionGroup">Rare diseases of the circulatory system</option>
+																	<option value="cardio" class="optionChild">&nbsp;&nbsp;&nbsp;Endocardial affection and restrictive cardiomyopathy</option>
+																	<option value="telangiectasia" class="optionChild">&nbsp;&nbsp;&nbsp;Hereditary Hemorrhagic Telangiectasia</option>
+																	<option value="respiratory" class="optionGroup">Rare diseases of the respiratory system</option>
+																	<option value="silicosis" class="optionChild">&nbsp;&nbsp;&nbsp;Silicosis</option>
+																	<option value="digestive" class="optionGroup">Rare diseases of the digestive system</option>
+																	<option value="cirrhosis" class="optionChild">&nbsp;&nbsp;&nbsp;Primary biliary cholangitis</option>
+																	<option value="skin" class="optionGroup">Rare diseases of the skin and subcutaneous tissue</option>
+																	<option value="pemphigus" class="optionChild">&nbsp;&nbsp;&nbsp;Pemphigus</option>
+																	<option value="genital" class="optionGroup">Rare diseases of the genitourinary system</option>
+																	<option value="bone" class="optionGroup">Rare diseases of the musculoskeletal system and connective tissue</option>
+																	<option value="scleroderma" class="optionChild">&nbsp;&nbsp;&nbsp;Sclerodermia</option>
+																	<option value="granulomatosis" class="optionChild">&nbsp;&nbsp;&nbsp;Granulomatosis with polyangiitis</option>
+																	<option value="polyarteritis" class="optionChild">&nbsp;&nbsp;&nbsp;Polyarteritis nodosa and Churg-Strauss</option>
+																	<option value="anomaly" class="optionGroup">Rare congenital malformations, deformations and chromosomal abnormalities</option>
+																	<option value="hernia" class="optionChild">&nbsp;&nbsp;&nbsp;Congenital diaphragmatic hernia</option>
+																	<option value="polymorphs" class="optionChild">&nbsp;&nbsp;&nbsp;Polymalformation</option>
+																	<option value="fallot" class="optionChild">&nbsp;&nbsp;&nbsp;Tetralogy of Fallot</option>
 
 									                  <!-- AÑADIR NUEVA ENFERMEDAD -->
 									                  <!-- <option value="nombre" class="optionGroup">Nombre completo</option> -->
@@ -271,37 +280,37 @@
 									      </div>
 
 									        <div id="administrative-limit-div">
-									            <label> Unidad geográfica:</label>
-									            <form id="administrative-limit-form">
-									                <select id="geoMap" name="geoMap">
-									                    <option value="" selected disabled hidden>Seleccionar</option>
-									                    <!-- <option value="country">Pais</option> -->
-									                    <option value="province">Provincia</option>
-									                    <option value="district">Comarca</option>
+														<label>Geographical unit:</label>
+														<form id="administrative-limit-form">
+																<select id="geoMap" name="geoMap">
+																		<option value="" selected disabled hidden>Select</option>
+																		<!-- <option value="country">country</option> -->
+																		<option value="province">Province</option>
+																		<option value="district">District</option>
 									                </select>
 									        </div>
 
 
 									        <div id="indicator-div">
-									            <label> Indicador epidemiológico:</label>
-									            <form id="indicator-form">
-									                <select id="rate" name="rate">
-									                    <option value="" selected disabled hidden>Seleccionar</option>
-									                    <option value="rme">Razón de Mortalidad Estandarizada</option>
-									                    <option value="rrs">Razón de Mortalidad Estandarizada Suavizada</option>
-									                    <option value="pps">Probabilidad a Posteriori</option>
-									                    <option value="ta">Tasa ajustada por edad</option>
+														<label>Epidemiological indicator:</label>
+														<form id="indicator-form">
+																<select id="rate" name="rate">
+																		<option value="" selected disabled hidden>Select</option>
+																		<option value="rme">Standardized Mortality Ratio</option>
+																		<option value="rrs">Smoothed Standardized Mortality Ratio</option>
+																		<option value="pps">Posterior Probability</option>
+																		<option value="ta">Age-adjusted Mortality Rate</option>
 									                </select>
 									        </div>
 
 									        <div id="sex-div">
-									            <label> Sexo:</label>
-									            <form id="sex-form">
-									                <select id="sex" name="sex">
-									                    <option value="" selected disabled hidden>Seleccionar</option>
-									                    <option value="total">Ambos</option>
-									                    <option value="women">Mujeres</option>
-									                    <option value="men">Hombres</option>
+														<label> Sex:</label>
+														<form id="sex-form">
+																<select id="sex" name="sex">
+																		<option value="" selected disabled hidden>Select</option>
+																		<option value="total">Total</option>
+																		<option value="women">Women</option>
+																		<option value="men">Men</option>
 									                </select>
 									        </div>
 
@@ -353,7 +362,7 @@
 		<script type="text/javascript" src='../layers/comunidades.js'></script>
 		<script type="text/javascript" src='../layers/paises.js'></script>
 		<script type="text/javascript" src='../js/data-service.js'></script>
-		<script type="text/javascript" src='../js/principal.js'></script>
+		<script type="text/javascript" src='../js/principal-en.js'></script>
 
 
 

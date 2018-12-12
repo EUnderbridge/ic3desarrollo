@@ -920,7 +920,7 @@ var chart = new Chart(document.getElementById('chart-canvas').getContext('2d'), 
 				scaleLabel: {
 					display: true,
 					labelString: 'Instituto de Investigación de Enfermedades Raras - Instituto de Salud Carlos III',
-          fontSize: 6,
+          fontSize: 10,
           position: 'right'
 				},
         ticks: {
