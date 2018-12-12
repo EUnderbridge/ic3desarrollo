@@ -537,7 +537,7 @@ function transparentStyle () {
 }
 
 
-et lastAddeddLayer = null;
+let lastAddeddLayer = null;
 function addRateDataLayer(layer) {
   // Color classification for features based on rate
   const colorByRate = function(rateType, rateValue) {
