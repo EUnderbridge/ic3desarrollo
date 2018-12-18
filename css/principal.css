@@ -455,6 +455,14 @@ canvas {
   margin-left: 5px;
 
 }
+.download-container input {
+  width: 45px;
+  float: right;
+  bottom: 5px;
+  position: absolute;
+  margin-left: 5px;
+
+}
 
 #form-div h4 {
   text-align-last: center;

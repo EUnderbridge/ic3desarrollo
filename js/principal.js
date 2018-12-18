@@ -337,8 +337,6 @@ selectTrendDisease.addEventListener("change", function(ev) {
 
 
 
-
-
   if (selectTrendDisease.value === "huntington") {
 
     for (let elm in huntingtonCountries) {
@@ -966,14 +964,12 @@ var chart = new Chart(document.getElementById('chart-canvas').getContext('2d'), 
 					display: true,
           labelString: 'Instituto de Investigación de Enfermedades Raras - Instituto de Salud Carlos III',
           fontSize: 10,
-
 				},
         ticks: {
           beginAtZero: false,
           min: 0,
           suggestedMin: 0
         },
-
 			}],
 			yAxes: [{
 				display: true,
@@ -1000,7 +996,6 @@ function done(){
 	var url_base64 = document.getElementById('chart-canvas').toDataURL('image/jpeg');
 	document.getElementById('download_link').href = url_base64;
 };
-
 
 //Update chart with rate data from xlsx files
 function updateChartWithXlsxData(xlsxData) {
@@ -1230,3 +1225,43 @@ function addPeriodInfoToDom () {
     document.getElementById('period-info').innerHTML = '*Periodo de datos: 1999 - 2013';
   }
 }
+
+$(function() {
+    $("#download_link_map").click(function() {
+	var getOverlay = function(){
+		var svg = d3.select('.leaflet-overlay-pane > svg'),
+		img = new Image(),
+		serializer = new XMLSerializer();
+      		console.log("svg ", svg.attr("width"), svg.attr("height"));
+      		var svgStr = serializer.serializeToString(svg.node());
+      		img.src = 'data:image/svg+xml;base64,'+window.btoa(svgStr);
+		return img;
+
+    	};
+	leafletImage(map, function(err, canv) {
+		var img_ = getOverlay();
+
+		var svg = d3.select('.leaflet-overlay-pane > svg');
+		var w =  svg.attr("width");
+		var h = svg.attr("height");
+		var pane = d3.select('.leaflet-map-pane');
+		var trans = pane.style("transform");
+		t = d3.select('.leaflet-map-pane').style('transform').split(", ");
+		var dx = t[4], dy = t[5].split(")")[0];
+		var img = new Image();
+
+		img.onload = function() {
+			canv.getContext("2d").drawImage(img, dx, dy, w, h);
+			html2canvas(document.getElementsByClassName("legend")[0],{allowTaint: true,}).then(function(canvas) {
+				var h2 = canv.height;
+				canv.getContext("2d").drawImage(canvas, 10, h2-canvas.height-10);
+				canv.toBlob(function(blob) { saveAs(blob, "imagen.png"); });
+			});
+
+		};
+		img.src = img_.src;
+
+
+	});
+    });
+});
