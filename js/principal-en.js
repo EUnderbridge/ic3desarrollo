@@ -886,20 +886,23 @@ function createInfoControl() {
 
   info.onAdd = function() {
     this._container = L.DomUtil.create('div', 'info info-control');
+    this._titleRate = L.DomUtil.create('h4');
     this._title = L.DomUtil.create('h4');
     this._rate = L.DomUtil.create('div');
+    this._container.appendChild(this._titleRate);
     this._container.appendChild(this._title);
     this._container.appendChild(this._rate);
     this.reset();
     return this._container;
   }
   info.reset = function() {
+    let mapValues = serializeMapFormValues();
+    this._titleRate.innerText = $( "#rare-disease option:selected" ).text();
     this._title.innerText = "";
     this._rate.innerText = "Pase el cursor por encima";
   }
   info.update = function(title, rate) {
     this._title.innerText = title;
-
     this._rate.innerText = rate.toFixed(2);
 	};
   return info;
