@@ -144,7 +144,7 @@
 
               <article>
 
-                <p>Spanish population and mortality data were obtained from <a href="https://www.ine.es/" target="_blank">National Statistics Institute (INE)</a>, according to cause of death, residence place, sex and age.</p>
+                <p>Annual population and mortality data for Spain were obtained from <a href="https://www.ine.es/" target="_blank">National Statistics Institute (INE)</a>, according to cause of death, residence place, sex and age.</p>
                 <p>The causes of death attributed to Rare Diseases were selected according to <a href="https://eciemaps.mscbs.gob.es/" target="_blank">ICD 10</a> list of the <a href="https://spainrdr.isciii.es/" target="_blank">Spanish Rare Diseases Registries Research Network (SpainRDR)</a>.</p>
                 <p>Basemaps were obtained from <a href="https://www.ign.es" target="_blank">Instituto Geográfico Nacional</a>, <a href="https://www.cnig.es/" target="_blank">Centro Nacional de Información Geográfica</a> for municipalities, provinces and Autonomous Communities and from <a href="https://www.mapa.gob.es/" target="_blank">Ministerio de Agricultura, Pesca y Alimentación</a> for districts.</p>
 
@@ -187,16 +187,22 @@
             <div class="col-md-6">
 
               <p>
-                Age-adjusted Mortality Rate: ..............
+                <b>Age-adjusted Mortality Rate:</b><br><br>The age distribution of a population can change over time and can be different in geographic areas. The process of age-adjustment ensures that the variability in mortality rates from one year to another, or between one geographic area and another, are not due to differences in the age distribution of the populations being compared. It is a summary measure of the rates that would have existed if the population under study had the same age distribution as the "standard" population.
               </p>
               <p>
-                Standardized Mortality Ratio: ..............
+                The following age-standardized mortality rates are calculated using direct age-adjustment method and the European standardized population as reference. They are expressed per 100,000 population.
               </p>
               <p>
-                Smoothed Standardized Mortality Ratio: ..............
+                <b>Standardized Mortality Ratio(SMR):</b><br><br>SMR is a ratio between the observed number of deaths in a study population and the expected number of deaths based on the age- and sex-mortality rates in a standard population.
               </p>
               <p>
-                Posterior Probability: ..............
+                The following SMRs are indirect standardized rates considering the Spanish mortality rate as reference. A ratio of observed/expected deaths greater than 1.0 means there is a higher than expected mortality in that geographical unit.
+              </p>
+              <p>
+                <b>Smoothed Standardized Mortality Ratio:</b><br><br>Smoothing procedure prevent problems arising from numerical instability in geographical units with low numbers of deaths and/or from neighbouring units with contrasting risks. SMRs were smoothed using Bayesian estimates based on the spatial hierarchical model proposed by <span title="Besag J, York J, Mollié A. Bayesian image restoration with applications in spatial statistics. Ann Inst Math Stat. 1991;43:1–20.">Besag, York y Mollié</span>.
+              </p>
+              <p>
+                <b>Posterior Probability:</b><br><br>The posterior probability is a measure associated to smoothed standardized mortality ratios. Posterior probability values of over 0.80 show a significantly higher-than-expected mortality risk and values under 0.20 indicate a significantly lower-than-expected risk.
               </p>
 
             </div>

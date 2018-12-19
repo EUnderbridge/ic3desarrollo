@@ -144,7 +144,7 @@
 
               <article>
 
-                <p>La población y el total de fallecidos en España se han obtenido desde el <a href="https://www.ine.es/" target="_blank">Instituto Nacional de Estadística (INE)</a>, según la causa de defunción, lugar de residencia, sexo y edad.</p>
+                <p>La población y el total de fallecidos en España para cada año se han obtenido del <a href="https://www.ine.es/" target="_blank">Instituto Nacional de Estadística (INE)</a>, según la causa de defunción, lugar de residencia, sexo y edad.</p>
                 <p>Las causas de defunción atribuidas a Enfermedades Raras se seleccionaron conforme al listado de códigos <a href="https://eciemaps.mscbs.gob.es/" target="_blank">CIE 10</a> de la <a href="https://spainrdr.isciii.es/" target="_blank">Red Española de Registros de Enfermedades Raras para la Investigación (SpainRDR)</a>.</p>
                 <p>Las bases cartográficas se obtuvieron del <a href="https://www.ign.es" target="_blank">Instituto Geográfico Nacional</a>, <a href="https://www.cnig.es/" target="_blank">Centro Nacional de Información Geográfica</a> para los límites municipales, provinciales y autonómicos y del <a href="https://www.mapa.gob.es/" target="_blank">Ministerio de Agricultura, Pesca y Alimentación</a> para los límites comarcales.</p>
 
@@ -187,16 +187,21 @@
             <div class="col-md-6">
 
               <p>
-                Tasa ajustada por edad: ..............
+                <b>Tasa ajustada por edad:</b><br><br>La distribución por edad de una población puede cambiar a lo largo del tiempo o ser diferente en distintas regiones geográficas. El ajuste por edad garantiza que las variaciones mostradas en las tasas de mortalidad de un año a otro, o entre diferentes regiones, no se deben a diferencias en la distribución por edad. Es una medida resumen de la tasa que tendría la población de estudio si tuviera la misma estructura de edad que la población considerada “estándar”.
               </p>
               <p>
-                Razón de mortalidad estandarizada: ..............
+                Las siguientes tasas de mortalidad ajustadas por edad se han calculado siguiendo el método directo y utilizando como referencia la población estándar europea. Están expresadas por cada 100.000 habitantes.
               </p>
               <p>
-                Razón de mortalidad estandarizada suavizada: ..............
+                <b>Razón de mortalidad estandarizada (RME):</b><br><br>Es una razón entre el número de fallecidos observados en una población de estudio y el número de fallecidos esperado, basándose en las tasas de mortalidad por edad y sexo de la población estándar para esa misma causa.
+              </p>
+              <p>Las siguientes RME están estandarizadas según el método indirecto y consideran la tasa de mortalidad de la población española como referencia. Una razón de observados/esperados mayor de 1.0 significa que en esa unidad geográfica hay una mortalidad por encima de lo esperado para España.
               </p>
               <p>
-                Probabilidad a posteriori: ..............
+                <b>Razón de mortalidad estandarizada suavizada:</b><br><br>El procedimiento de suavización previene problemas derivados de la inestabilidad numérica en áreas geográficas con bajo número de defunciones y/o de unidades próximas con riesgos opuestos. Las RMEs fueron suavizadas usando estimaciones bayesianas que se basan en el modelo jerárquico espacial propuesto por <span title="Besag J, York J, Mollié A. Bayesian image restoration with applications in spatial statistics. Ann Inst Math Stat. 1991;43:1–20.">Besag, York y Mollié</span>.
+              </p>
+              <p>
+                <b>Probabilidad a posteriori:</b><br><br>La probabilidad a posteriori es una medida asociada a las razones de mortalidad estandarizadas suavizadas. Valores de probabilidad a posteriori por encima de 0,80 muestran que el riesgo de defunción en esa unidad geográfica es significativamente mayor de lo esperado para España, mientras que los valores por debajo de 0.20 indican que el riesgo es significativamente menor de lo esperado.
               </p>
 
             </div>
