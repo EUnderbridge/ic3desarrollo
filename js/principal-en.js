@@ -1260,6 +1260,11 @@ $(function() {
 				canv.getContext("2d").drawImage(canvas, 10, h2-canvas.height-10);
 				canv.toBlob(function(blob) { saveAs(blob, "imagen.png"); });
 			});
+      html2canvas(document.getElementsByClassName("info")[0],{allowTaint: true,}).then(function(canvas) {
+        var h2 = canv.height;
+        canv.getContext("2d").drawImage(canvas, 10, h2-canvas.height-10);
+        canv.toBlob(function(blob) { saveAs(blob, "imagen.png"); });
+      });
 
 		};
 		img.src = img_.src;
