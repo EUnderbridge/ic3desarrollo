@@ -1068,7 +1068,7 @@ function filterChartDataByYearRange(data, yearStart, yearEnd) {
 
 
 // Visualize map information
-var mapSubmitButton = document.querySelector("input[type=submit]");
+var mapSubmitButton = document.querySelector("input[name=map-submit]");
 var currentLegend = L.control();                                                // Need to preserve the object to use later when you remove it
 mapSubmitButton.addEventListener("click", function(ev) {
   ev.preventDefault();
