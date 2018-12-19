@@ -474,6 +474,7 @@ function validateTrendForm () {
   } else if (!formElements.geo) {
     msg("error", "Please, select a country.")
 
+  } else {
   };
 }
 
