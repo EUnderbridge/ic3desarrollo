@@ -900,7 +900,7 @@ function createInfoControl() {
     let mapValues = serializeMapFormValues();
     this._titleRate.innerText = $( "#rare-disease option:selected" ).text();
     this._title.innerText = "";
-    this._rate.innerText = "Pase el cursor por encima";
+    this._rate.innerText = "";
   }
   info.update = function(title, rate) {
     this._title.innerText = title;
