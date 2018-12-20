@@ -899,7 +899,7 @@ function createInfoControl() {
     let mapValues = serializeMapFormValues();
     this._titleRate.innerText = $( "#rare-disease option:selected" ).text();
     this._title.innerText = "";
-    this._rate.innerText = "Pase el cursor por encima";
+    this._rate.innerText = "";
   }
   info.update = function(title, rate) {
     this._title.innerText = title;
@@ -1257,15 +1257,17 @@ $(function() {
 			canv.getContext("2d").drawImage(img, dx, dy, w, h);
 			html2canvas(document.getElementsByClassName("legend")[0],{allowTaint: true,}).then(function(canvas) {
 				var h2 = canv.height;
-				canv.getContext("2d").drawImage(canvas, 10, h2-canvas.height-10);
+				canv.getContext("2d").drawImage(canvas, 10, h2 - canvas.height - 10);
 				canv.toBlob(function(blob) { saveAs(blob, "imagen.png"); });
 			});
+
       html2canvas(document.getElementsByClassName("info")[0],{allowTaint: true,}).then(function(canvas) {
-         var w3 = canv.width;    //Este es el ancho del mapa
-         // Ahora, al segundo parámetro de drawImage le dices que te lo dibuje a la derecha del todo restándole al ancho del mapa el ancho de la leyenda con el nombre de la enfermedad, menos 10 pixeles para que deje un pequeño margen
-         canv.getContext("2d").drawImage(canvas, w3 - canv.width - 10 ,10);
-         canv.toBlob(function(blob) { saveAs(blob, "imagen.png"); });
-       });
+        var w3 = canv.width;    //Este es el ancho del mapa
+        // Ahora, al segundo parámetro de drawImage le dices que te lo dibuje a la derecha del todo restándole al ancho del mapa el ancho de la leyenda con el nombre de la enfermedad (canvas.width), menos 10 píxeles para que deje un pequeño margen
+        canv.getContext("2d").drawImage(canvas, w3 - canvas.width - 10, 10);
+        canv.toBlob(function(blob) { saveAs(blob, "imagen.png"); });
+      });
+
 
 		};
 		img.src = img_.src;
