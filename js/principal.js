@@ -1261,10 +1261,11 @@ $(function() {
 				canv.toBlob(function(blob) { saveAs(blob, "imagen.png"); });
 			});
       html2canvas(document.getElementsByClassName("info")[0],{allowTaint: true,}).then(function(canvas) {
-        var h3 = canv.height;
-        canv.getContext("2d").drawImage(canvas, 10, canvas.height-10);
-        canv.toBlob(function(blob) { saveAs(blob, "imagen.png"); });
-      });
+         var w3 = canv.width;    //Este es el ancho del mapa
+         // Ahora, al segundo parámetro de drawImage le dices que te lo dibuje a la derecha del todo restándole al ancho del mapa el ancho de la leyenda con el nombre de la enfermedad, menos 10 pixeles para que deje un pequeño margen
+         canv.getContext("2d").drawImage(canvas, w3 - canv.width - 10 ,10);
+         canv.toBlob(function(blob) { saveAs(blob, "imagen.png"); });
+       });
 
 		};
 		img.src = img_.src;
