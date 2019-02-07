@@ -16,9 +16,7 @@ var map = L.map('map', {
 var mapboxToken = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
 var mapboxUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={token}';
 var mapboxAttribution = [
-  'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,',
-  '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>,',
-  'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+  '&copy;Instituto de Investigación de Enfermedades Raras, Instituto de Salud Carlos III. Universidad de Alcalá'
 ].join(" ");
 
 var mapbox = L.tileLayer(mapboxUrl, {
@@ -883,27 +881,30 @@ legendTaDisease.onAdd = function (map) {
 
 // Legend control
 function createInfoControl() {
-  let info = L.control();
+  let info = L.control({position: "topright"});
 
   info.onAdd = function() {
     this._container = L.DomUtil.create('div', 'info info-control');
-    this._titleRate = L.DomUtil.create('h4');
-    this._title = L.DomUtil.create('h4');
+    this._titleDisease = L.DomUtil.create('h4');
+    this._titleRateSex = L.DomUtil.create('h4');
+    this._titleGeo = L.DomUtil.create('h4');
     this._rate = L.DomUtil.create('div');
-    this._container.appendChild(this._titleRate);
-    this._container.appendChild(this._title);
+    this._container.appendChild(this._titleDisease);
+    this._container.appendChild(this._titleRateSex);
+    this._container.appendChild(this._titleGeo);
     this._container.appendChild(this._rate);
     this.reset();
     return this._container;
   }
   info.reset = function() {
     let mapValues = serializeMapFormValues();
-    this._titleRate.innerText = $( "#rare-disease option:selected" ).text();
-    this._title.innerText = "";
+    this._titleDisease.innerText = $( "#rare-disease option:selected" ).text();
+    this._titleRateSex.innerText = $( "#rate option:selected" ).text() + ' - ' + $( "#sex option:selected" ).text();
+    this._titleGeo.innerText = "";
     this._rate.innerText = "";
   }
   info.update = function(title, rate) {
-    this._title.innerText = title;
+    this._titleGeo.innerText = title;
     this._rate.innerText = rate.toFixed(2);
 	};
   return info;
@@ -966,7 +967,7 @@ var chart = new Chart(document.getElementById('chart-canvas').getContext('2d'), 
 				display: true,
 				scaleLabel: {
 					display: true,
-					labelString: 'Instituto de Investigación de Enfermedades Raras - Instituto de Salud Carlos III',
+					labelString: '&copy;Instituto de Investigación de Enfermedades Raras, Instituto de Salud Carlos III. Universidad de Alcalá',
           fontSize: 10
 				},
         ticks: {
@@ -979,7 +980,7 @@ var chart = new Chart(document.getElementById('chart-canvas').getContext('2d'), 
 				display: true,
 				scaleLabel: {
 					display: true,
-					labelString: 'Age-adjusted Mortality Rate per 100,000 inhabitants',
+					labelString: 'Age-adjusted Mortality Rate per 100,000 inhab.',
           fontStyle: "bold",
           fontSize: 12,
 				},
