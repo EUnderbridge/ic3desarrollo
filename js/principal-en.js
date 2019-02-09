@@ -1009,7 +1009,16 @@ function updateChartWithXlsxData(xlsxData) {
       const keys = Object.keys(row)
       const rowNameByName = keys.map((k) => k.toLowerCase()).find((k) => k == name)
       const rowNameByPosition = keys[position];
-      return row[rowNameByName] || row[rowNameByPosition] || null;
+
+      const valueByRowName = row[rowNameByName];
+      const valueByRowPosition = row[rowNameByPosition];
+      if (valueByRowName !== undefined) {
+        return valueByRowName;
+      } else if (valueByRowPosition !== undefined) {
+        return valueByRowPosition;
+      } else {
+          throw new Error("Can't find value by name " + name + " nor position " * position);
+      }
     }
   }
   const labelsX = xlsxData.map(getRowValueByNameOrPosition("año", 0));
@@ -1021,23 +1030,23 @@ function updateChartWithXlsxData(xlsxData) {
       label: "Total",
       data: datasetBothData,
       borderColor: "#e9a917",
-      backgroundColor: "transparent",
+      backgroundColor: "rgba(233, 169, 23, 0.3)",
       spanGaps: true,
       pointStyle: 'line'
     },
     {
-      label: "Men",
+      label: "Hombres",
       data: datasetMenData,
       borderColor: "#76a892",
-      backgroundColor: "transparent",
+      backgroundColor: "rgba(118, 168, 146, 0.5)",
       spanGaps: true,
       pointStyle: 'line'
     },
     {
-      label: "Women",
+      label: "Mujeres",
       data: datasetWomenData,
       borderColor: "#ed422d",
-      backgroundColor: "transparent",
+      backgroundColor: "rgba(237, 66, 45, 0.7)",
       spanGaps: true,
       pointStyle: 'line'
     },

@@ -954,7 +954,8 @@ var chart = new Chart(document.getElementById('chart-canvas').getContext('2d'), 
 		},
 		tooltips: {
 			mode: 'index',
-			intersect: false
+			intersect: false,
+      backgroundColor: '#000000'
 		},
 		hover: {
 			mode: 'nearest',
@@ -1029,7 +1030,7 @@ function updateChartWithXlsxData(xlsxData) {
       label: "Total",
       data: datasetBothData,
       borderColor: "#e9a917",
-      backgroundColor: "transparent",
+      backgroundColor: "rgba(233, 169, 23, 0.3)",
       spanGaps: true,
       pointStyle: 'line'
     },
@@ -1037,7 +1038,7 @@ function updateChartWithXlsxData(xlsxData) {
       label: "Hombres",
       data: datasetMenData,
       borderColor: "#76a892",
-      backgroundColor: "transparent",
+      backgroundColor: "rgba(118, 168, 146, 0.5)",
       spanGaps: true,
       pointStyle: 'line'
     },
@@ -1045,7 +1046,7 @@ function updateChartWithXlsxData(xlsxData) {
       label: "Mujeres",
       data: datasetWomenData,
       borderColor: "#ed422d",
-      backgroundColor: "transparent",
+      backgroundColor: "rgba(237, 66, 45, 0.7)",
       spanGaps: true,
       pointStyle: 'line'
     },
