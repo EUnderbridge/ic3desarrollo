@@ -967,7 +967,7 @@ var chart = new Chart(document.getElementById('chart-canvas').getContext('2d'), 
 				display: true,
 				scaleLabel: {
 					display: true,
-          labelString: '&copy;Instituto de Investigación de Enfermedades Raras, Instituto de Salud Carlos III. Universidad de Alcalá',
+          labelString: '©Instituto de Investigación de Enfermedades Raras, Instituto de Salud Carlos III. Universidad de Alcalá',
           fontSize: 10,
 				},
         ticks: {
