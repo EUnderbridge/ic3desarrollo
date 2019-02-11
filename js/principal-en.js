@@ -940,6 +940,11 @@ var chart = new Chart(document.getElementById('chart-canvas').getContext('2d'), 
   type: 'line',
   scaleFontColor: 'red',
   options: {
+    elements: {
+        line: {
+            tension: 0.25
+        }
+    },
     legend: {
       position: 'top',
       labels: {

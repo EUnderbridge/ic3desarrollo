@@ -939,6 +939,11 @@ var chart = new Chart(document.getElementById('chart-canvas').getContext('2d'), 
   type: 'line',
   scaleFontColor: 'red',
   options: {
+    elements: {
+        line: {
+            tension: 0.25
+        }
+    },
     legend: {
       position: 'top',
       labels: {
@@ -1032,7 +1037,8 @@ function updateChartWithXlsxData(xlsxData) {
       borderColor: "#e9a917",
       backgroundColor: "rgba(233, 169, 23, 0.3)",
       spanGaps: true,
-      pointStyle: 'line'
+      pointStyle: 'line',
+      borderWidth: 3
     },
     {
       label: "Hombres",
@@ -1040,7 +1046,8 @@ function updateChartWithXlsxData(xlsxData) {
       borderColor: "#76a892",
       backgroundColor: "rgba(118, 168, 146, 0.5)",
       spanGaps: true,
-      pointStyle: 'line'
+      pointStyle: 'line',
+      borderWidth: 3
     },
     {
       label: "Mujeres",
@@ -1048,7 +1055,8 @@ function updateChartWithXlsxData(xlsxData) {
       borderColor: "#ed422d",
       backgroundColor: "rgba(237, 66, 45, 0.7)",
       spanGaps: true,
-      pointStyle: 'line'
+      pointStyle: 'line',
+      borderWidth: 3
     },
   ]);
 }
