@@ -1035,25 +1035,28 @@ function updateChartWithXlsxData(xlsxData) {
       label: "Total",
       data: datasetBothData,
       borderColor: "#e9a917",
-      backgroundColor: "rgba(233, 169, 23, 0.3)",
+      backgroundColor: "transparent",
       spanGaps: true,
-      pointStyle: 'line'
-    },
-    {
+      pointStyle: 'line',
+      borderWidth: 4
+      },
+      {
       label: "Hombres",
       data: datasetMenData,
       borderColor: "#76a892",
-      backgroundColor: "rgba(118, 168, 146, 0.5)",
+      backgroundColor: "transparent",
       spanGaps: true,
-      pointStyle: 'line'
-    },
-    {
+      pointStyle: 'line',
+      borderWidth: 4
+      },
+      {
       label: "Mujeres",
       data: datasetWomenData,
       borderColor: "#ed422d",
-      backgroundColor: "rgba(237, 66, 45, 0.7)",
+      backgroundColor: "transparent",
       spanGaps: true,
-      pointStyle: 'line'
+      pointStyle: 'line',
+      borderWidth: 4
     },
   ]);
 }
